@@ -1,0 +1,80 @@
+.Promo__header {
+    display: flex;
+    background-color: #073042;
+    justify-content: space-between;
+}
+
+.Promo__header-logo {
+    margin: 18px 70px;
+}
+
+.Promo__container {
+    display: flex;
+    margin: 21px 70px 0 auto;
+}
+
+.Promo__signup {
+    margin-right: 30px;
+    margin-top: 8px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: white;
+    text-decoration: none;
+    height: 16px;
+}
+
+.Promo__signin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: #3DDC84;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    font-style: normal;
+    font-weight: 500;
+    width: 76px;
+    height: 32px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.Promo__signin-button {
+    background-color: #3DDC84;
+}
+
+.Promo__baner {
+    height: 524px;
+    background-color: #073042;
+    background-image: url('../../../images/pic__COLOR_landing-logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Promo__baner-title {
+    color: white;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 58px;
+    text-align: center;
+    width: 730px;
+    margin: 0 auto;
+    padding-top: 184px;
+}
+
+@media screen and (max-width:768px) {
+    .Promo__header-logo {
+        margin: 18px 30px;
+    }
+
+    .Promo__container {
+        margin: 21px 30px;
+    }
+}
+

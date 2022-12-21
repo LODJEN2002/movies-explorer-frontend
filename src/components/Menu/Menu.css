@@ -1,0 +1,82 @@
+.Menu {
+    display: none;
+    position: fixed;
+    color: white;
+    height: 100%;
+    right: 0;
+    background-color: #202020;
+    z-index: 1;
+    transform: translateX(100%);
+    transition: all .3s;
+}
+
+.Menu-opened {
+    display: none;
+    position: fixed;
+    color: white;
+    height: 100%;
+    right: 0;
+    background-color: #202020;
+    z-index: 1;
+    transform: translateX(0);
+    transition: all .4s;
+
+}
+
+
+
+.Menu__content {
+    margin-top: 159px;
+    width: 520px;
+    text-align: center;
+
+}
+
+.Menu__content-link {
+    padding: 0 90px;
+    width: 340px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 28px;
+}
+
+.Menu__myProfile {
+    display: flex;
+    background-color: #202020;
+    color: white;
+    margin: 21px 0;
+    width: 100px;
+    height: 32px;
+    border: 2px solid #3C3C3C;
+    border-radius: 50px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    font-family: 'Inter';
+    cursor:pointer;
+    text-decoration: none;
+    margin: 621px  auto 0 auto;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+}
+
+.Menu__myProfile-img {
+    padding-right: 7px;
+    width: 12px;
+    height: 14px;
+    justify-content: center;
+}
+
+@media screen and (max-width:768px) {
+    .Menu {
+        display: flex;
+    }
+    .Menu-opened {
+        display: flex;
+    }
+}

@@ -1,4 +1,19 @@
-.App {
+@import "./../../vendor/fonts/inter.css";
+
+body {
+  font-family: 'Inter';
+  background-color: #202020;
+  /* font-style: normal; */
+}
+/* 
+@media screen and (max-width: 1100px) {
+  .body {
+    background-color: red;
+  }  
+} */
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +50,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

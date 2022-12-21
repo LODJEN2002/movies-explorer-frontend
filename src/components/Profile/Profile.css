@@ -1,0 +1,65 @@
+.Profile {
+    padding: 0 70px;
+    color: white;
+}
+
+.Profile__greeting {
+    margin: 0;
+    margin-top: 74px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.Profile__ifco-Container {
+    margin-top: 123px;
+    width: 410px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Profile__info-name {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #424242;
+}
+
+.Profile__info-email {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 220px;
+}
+
+.Profile__info-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+.Profile__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Profile__footer-edit {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 16px;
+}
+
+
+.Profile__footer-exit {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    color: #EE3465;
+}

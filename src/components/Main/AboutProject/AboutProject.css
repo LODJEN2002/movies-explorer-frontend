@@ -1,0 +1,123 @@
+.AboutProject {
+    background-color: #202020;
+    padding: 0 70px;
+    color: white;
+    justify-content: center;
+}
+
+.AboutProject__title {
+    margin: 0;
+    color: white;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    padding: 110px 0 23px 0;
+    border-bottom: 1px solid #DADADA;
+}
+
+.AboutProject__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.AboutProject__container-block {
+    max-width: 550px;
+}
+
+.AboutProject__container-title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    margin: 70px 0 26px 0;
+}
+
+.AboutProject__container-subTitle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 110px;
+}
+
+.AboutProject__line {
+    display: flex;
+    height: 36px;
+}
+
+.AboutProject__line-small {
+    display: flex;
+    width: 228px;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+    background-color: #3DDC84;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: black;
+    margin-bottom: 14px;
+}
+
+.AboutProject__line-big {
+    display: flex;
+    width: 912px;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+    background-color: #303030;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: white;
+    margin-bottom: 14px;
+}
+
+.AboutProject__line-down {
+    display: flex;
+}
+
+.AboutProject__line-small-down {
+    display: flex;
+    width: 228px;
+    color: #8B8B8B;
+    justify-content: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 14px;
+    margin-bottom: 110px;
+}
+
+.AboutProject__line-big-down {
+    display: flex;
+    width: 912px;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #8B8B8B;
+    margin-top: 14px;
+    margin-bottom: 110px;
+}
+
+@media screen and (max-width:768px) {
+    .AboutProject {
+        padding: 0 50px;
+    }
+
+    .AboutProject__container-subTitle {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .AboutProject__container-block {
+        max-width: 319px;
+    }
+}
