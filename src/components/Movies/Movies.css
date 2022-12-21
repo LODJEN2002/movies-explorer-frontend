@@ -3,3 +3,9 @@
     color: white;
     padding: 0 70px;
 }
+
+@media screen and (max-width:768px) {
+.Movies {
+    padding: 0 30px;
+}
+}

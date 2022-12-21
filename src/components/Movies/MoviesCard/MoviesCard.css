@@ -1,6 +1,6 @@
 .MoviesCard:nth-child(4n) {
     margin-right: 0px;
-  }
+}
 
 .MoviesCard {
     margin-top: 38px;
@@ -53,4 +53,19 @@
     line-height: 13px;
     color: #8B8B8B;
     padding-top: 6px;
+}
+
+
+@media screen and (max-width:768px) {
+    .MoviesCard {
+        width: 330px;
+        margin-top: 30px;
+    }
+    
+    .MoviesCard__img {
+        Width: 330px;
+        Height: 190px;
+    }
+
+
 }

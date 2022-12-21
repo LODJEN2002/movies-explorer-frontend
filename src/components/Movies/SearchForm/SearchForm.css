@@ -1,5 +1,6 @@
 .SearchForm {
     padding: 60px 0 0 0;
+    margin-bottom: 42px;
 }
 
 .SearchForm__container {
@@ -23,7 +24,6 @@
     font-weight: 400;
     font-size: 13px;
     line-height: 17px;
-    width: 900px;
 }
 
 .SearchForm__button {

@@ -3,6 +3,7 @@
     cursor: pointer;
     display: none;
     z-index: 2;
+    /* margin-right: 22px; */
 }
 
 .Burger__btn {
@@ -11,6 +12,7 @@
     height: 44px;
     display: flex;
     justify-content: center;
+    right: 30px;
 }
 
 .Burger__btn::before {
@@ -20,6 +22,7 @@
     width: 28px;
     height: 3px;
     background-color: white;
+    transition: all .3s;
 }
 
 .Burger__btn-center {
@@ -37,12 +40,44 @@
     height: 3px;
     bottom: 10px;
     background-color: white;
-    
+    transition: all .3s;
 }
+
+.Burger__btn-open {
+    position: fixed;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    transition: all .3s;
+}
+
+.Burger__btn-open::before {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 3px;
+    top: 21px;
+    ;
+    background-color: white;
+    transform: rotate(-45deg);
+    transition: all .4s;
+}
+
+.Burger__btn-open::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 3px;
+    bottom: 20px;
+    background-color: white;
+    transform: rotate(45deg);
+    transition: all .4s;
+}
+
 
 @media screen and (max-width:768px) {
     .Burger {
         display: block;
     }
-    
 }

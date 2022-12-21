@@ -13,7 +13,7 @@
     outline: none;
     width: 34px;
     height: 14px;
-    color:#343434;
+    color: #343434;
     border: 1px solid #343434;
     border-radius: 20px;
     box-shadow: inset 0px -20px 0 0 #343434;
@@ -41,4 +41,17 @@
     left: 19px;
     box-shadow: -2px 4px 3px rgba(0, 0, 0, 0.05);
     background-color: white;
+}
+
+.FilterCheckbox__title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+@media screen and (max-width:768px) {
+    .FilterCheckbox {
+        padding: 42px 0 51px;
+    }  
 }
