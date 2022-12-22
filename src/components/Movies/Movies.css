@@ -5,7 +5,19 @@
 }
 
 @media screen and (max-width:768px) {
-.Movies {
-    padding: 0 30px;
+    .Movies {
+        padding: 0 30px;
+    }
 }
+
+@media screen and (max-width:355px) {
+    .Movies {
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width:325px) {
+    .Movies {
+        padding: 0 6px;
+    }
 }

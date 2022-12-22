@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom';
 import Header from '../Header/Header';
 import './Profile.css'
 
 function Profile() {
     return (
-        <div className='Profile'>
+        <section className='Profile'>
             <Header />
             <h2 className='Profile__greeting'>
                 Привет, UserName
@@ -27,10 +28,10 @@ function Profile() {
                 </div>
             </div>
             <div className='Profile__footer'>
-                <a className='Profile__footer-edit'>Редактировать </a>
-                <a className='Profile__footer-exit'>Выйти из аккаунта </a>
+                <Link className='Profile__footer-edit'>Редактировать </Link>
+                <Link className='Profile__footer-exit'>Выйти из аккаунта </Link>
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -4,7 +4,7 @@ import './AboutMe.css'
 
 function AboutMe() {
     return (
-        <div className='AboutMe'>
+        <section className='AboutMe' id='AboutMe'>
             <MainTitle
                 title='Студент'
             />
@@ -15,11 +15,11 @@ function AboutMe() {
                     <p className='AboutMe__info-myLife'>Я родился и живу в Саратове, закончил  факультет экономики СГУ. У меня есть жена
                         и дочь. Я люблю слушать музыку, а ещё увлекаюсь бегом. Недавно начал кодить. С 2015 года работал в компании «СКБ Контур». После того, как прошёл курс по веб-разработке,
                         начал заниматься фриланс-заказами и ушёл с постоянной работы.</p>
-                    <p className='AboutMe__info-git'> Github</p>
+                    <a className='AboutMe__info-git' href='https://github.com/LODJEN2002'> Github</a>
                 </div>
                 <img className='AboutMe__photo' src={photo} alt='MyPhoto'></img>
             </div>
-        </div>
+        </section>
     );
 };
 

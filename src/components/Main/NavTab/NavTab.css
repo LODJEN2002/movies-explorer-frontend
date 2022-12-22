@@ -9,7 +9,7 @@
     justify-content: center;
     list-style-type: none;
     padding: 0;
-    
+
 }
 
 .NavTab_container-link {
@@ -20,5 +20,19 @@
     line-height: 16px;
     padding-right: 20px;
     padding-left: 20px;
+}
 
+.NavTab_container-link:hover {
+    opacity: .7;
+}
+
+@media screen and (max-width:320px) {
+    .NavTab {
+        padding: 25px 0;
+    }
+
+    .NavTab_container-link {
+        font-size: 11px;
+        line-height: 16px;
+    }
 }

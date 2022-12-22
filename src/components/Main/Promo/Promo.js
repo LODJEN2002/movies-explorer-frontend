@@ -1,22 +1,23 @@
+import { Link } from 'react-router-dom';
 import logo from '../../../images/logo.svg';
 import './Promo.css';
 
 function Promo() {
     return (
-        <div className='Promo'>
+        <header className='Promo'>
             <div className='Promo__header'>
-                <a href='/'>
+                <Link to='/main'>
                     <img src={logo} className='Promo__header-logo' alt='logo' />
-                </a>
+                </Link>
                 <div className='Promo__container'>
-                    <a href='signup' className='Promo__signup'>Регистрация</a>
-                    <a href='signin' className='Promo__signin'>Войти</a>
+                    <Link to='signup' className='Promo__signup'>Регистрация</Link>
+                    <Link to='signin' className='Promo__signin'>Войти</Link>
                 </div>
             </div>
             <div className='Promo__baner'>
                 <h1 className='Promo__baner-title'>Учебный проект студента факультета Веб-разработки.</h1>
             </div>
-        </div>
+        </header>
 
     );
 }

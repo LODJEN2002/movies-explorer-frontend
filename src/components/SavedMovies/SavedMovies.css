@@ -2,3 +2,26 @@
     padding: 0 70px;
     color: white;
 }
+
+.SavedMovies__space {
+    height: 140px;
+}
+
+@media screen and (max-width:768px) {
+    .SavedMovies {
+        padding: 0 30px;
+    }   
+}
+
+@media screen and (max-width:355px) {
+    .SavedMovies {
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width:325px) {
+    .SavedMovies {
+        padding: 0 6px;
+
+    }
+}

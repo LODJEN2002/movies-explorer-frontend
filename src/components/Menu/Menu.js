@@ -6,7 +6,7 @@ function Menu(props) {
     const { open } = props; 
 
     return (
-        <div className={open ? 'Menu-opened' : 'Menu'}>
+        <section className={open ? 'Menu-opened' : 'Menu'}>
             <div className='Menu__content'>
                 {/* СДЕЛАЙ СЕМНТИЧЕСКИЕ ТЕГИ! */}
                 <div className='Menu__content-link'>Главная</div>
@@ -17,7 +17,7 @@ function Menu(props) {
                     Аккаунт
                 </a>
             </div>
-        </div>
+        </section>
     );
 };
 

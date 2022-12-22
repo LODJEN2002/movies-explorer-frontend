@@ -6,7 +6,7 @@ function MoviesCardList(props) {
 
 
     return (
-        <div className='MoviesCardList'>
+        <section className='MoviesCardList'>
             {cards.map((card) => (
                 <MoviesCard
                     key={card.key}
@@ -15,7 +15,7 @@ function MoviesCardList(props) {
                     timeMovie={card.timeMovie}
                 />
             ))}
-        </div>
+        </section>
     );
 };
 

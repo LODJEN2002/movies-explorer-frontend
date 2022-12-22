@@ -5,11 +5,11 @@ function Burger(props) {
 
 
     return (
-        <div className='Burger'>
+        <section className='Burger'>
             <div className={open ? 'Burger__btn-open' : 'Burger__btn'} onClick={() => setOpen(!open)}>
                 <span className={open ? '' : 'Burger__btn-center'}/>
             </div>
-        </div>
+        </section>
     );
 };
 

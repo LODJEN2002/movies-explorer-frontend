@@ -1,6 +1,5 @@
 import './App.css';
 import Main from '../Main/Main'
-import Footer from '../Footer/Footer';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import { Route, Routes, Navigate } from 'react-router-dom';
@@ -25,7 +24,6 @@ function App() {
         element={<Navigate to='/404' />} 
         />
       </Routes>
-      <Footer />
     </div>
   );
 }

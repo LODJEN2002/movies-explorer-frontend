@@ -12,6 +12,7 @@
 
 .AboutMe__info {
     max-width: 600px;
+    margin-bottom: 101px;
 }
 
 .AboutMe__info-name {
@@ -46,6 +47,12 @@
     font-size: 14px;
     line-height: 17px;
     padding-bottom: 101px;
+    text-decoration: none;
+    color: white;
+}
+
+.AboutMe__info-git:hover {
+    opacity: .7;
 }
 
 .AboutMe__photo {
@@ -88,5 +95,67 @@
 
     .AboutMe__info-git {
         padding-bottom: 91px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .AboutMe {
+        background-color: #202020;
+        padding: 0 30px;
+        color: white;
+    }
+
+    .AboutMe__container {
+        display: flex;
+        padding-top: 0;
+        flex-direction: column-reverse;
+    }
+
+    .AboutMe__photo {
+        margin-top: 50px;
+        padding-bottom: 40px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .AboutMe {
+        padding: 0 14px;
+    }
+
+    .AboutMe__container {
+        display: flex;
+        padding-top: 0;
+        flex-direction: column-reverse;
+    }
+
+    .AboutMe__photo {
+        margin-top: 0;
+        width: 292px;
+        height: 352px;
+        padding-bottom: 40px;
+    }
+
+    .AboutMe__info-name {
+        font-size: 30px;
+        line-height: 36px;
+        margin-bottom: 20px;
+    }
+
+    .AboutMe__info-age {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .AboutMe__info-myLife {
+        font-size: 11px;
+        line-height: 16px;
+        padding-bottom: 40px;
+        margin-bottom: 0;
+    }
+
+    .AboutMe__info-git {
+        font-size: 14px;
+        line-height: 17px;
+        padding-bottom: 70px;
     }
 }

@@ -1,9 +1,9 @@
 import './Header.css';
-import logo from '../../images/logo.svg';
 import myProfileImg from '../../images/icon__COLOR_icon-main.svg';
 import Burger from '../Burger/Burger';
 import Menu from '../Menu/Menu';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -12,15 +12,15 @@ function Header() {
 
     return (
         <header className='Header'>
-            <img className='Header__logo' src={logo} alt='logo_header'></img>
+            <Link className='Header__logo' to="/"></Link>
             <div className='Header__navigation'>
                 <a className='Header__navigation-film' href='movies'>Фильмы</a>
                 <a className='Header__navigation-saveFilm' href='saved-movies'>Сохранённые фильмы</a>
             </div>
-            <a className='Header__myProfile' href='profile'>
+            <Link className='Header__myProfile' to='/profile'>
                 <img className='Header__myProfile-img' src={myProfileImg} alt='profile-img'></img>
                 Аккаунт
-            </a>
+            </Link>
             <Burger 
             open={MenuOpen}
             setOpen={setMenuOpen}/>

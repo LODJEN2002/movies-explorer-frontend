@@ -11,6 +11,11 @@
     margin-top: 50px;
     cursor: pointer;
     margin-bottom: 80px;
+    cursor: pointer;
+}
+
+.ButtonPluse:hover {
+    opacity: .8;
 }
 
 .ButtonPluse__head {

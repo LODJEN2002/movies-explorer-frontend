@@ -3,7 +3,7 @@ import './Techs.css';
 
 function Techs() {
     return (
-        <div className='Techs'>
+        <section className='Techs' id="Techs">
             <MainTitle
                 title='Технологии'
             />
@@ -12,16 +12,16 @@ function Techs() {
                 <p className='Techs__main-subtitle'>На курсе веб-разработки мы освоили технологии,
                     которые применили в дипломном проекте.</p>
             </div>
-            <div className='Techs__seven'>
-                <div className='Techs__seven-block'>HTML</div>
-                <div className='Techs__seven-block'>CSS</div>
-                <div className='Techs__seven-block'>JS</div>
-                <div className='Techs__seven-block'>React</div>
-                <div className='Techs__seven-block'>Git</div>
-                <div className='Techs__seven-block'>Express.js</div>
-                <div className='Techs__seven-block'>MongoDB</div>
-            </div>
-        </div>
+            <ul className='Techs__seven'>
+                <li className='Techs__seven-block'>HTML</li>
+                <li className='Techs__seven-block'>CSS</li>
+                <li className='Techs__seven-block'>JS</li>
+                <li className='Techs__seven-block'>React</li>
+                <li className='Techs__seven-block'>Git</li>
+                <li className='Techs__seven-block'>Express.js</li>
+                <li className='Techs__seven-block'>MongoDB</li>
+            </ul>
+        </section>
     );
 };
 

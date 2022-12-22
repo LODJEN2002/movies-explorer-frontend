@@ -2,10 +2,10 @@ import './FilterCheckbox.css';
 
 function FilterCheckbox() { 
     return (
-        <div className='FilterCheckbox' data-onlabel="on" data-offlabel="off">
+        <section className='FilterCheckbox' data-onlabel="on" data-offlabel="off">
             <input className='FilterCheckbox__checkbox' placeholder='sd' type='checkbox'></input>
             <div className='FilterCheckbox__title'>Короткометражки</div>
-        </div>
+        </section>
     );
 };
 

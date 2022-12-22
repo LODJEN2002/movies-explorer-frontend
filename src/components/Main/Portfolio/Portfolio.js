@@ -3,7 +3,7 @@ import vektorSVG from '../../../images/text__COLOR_font-main.svg'
 
 function Portfolio() {
     return (
-        <div className='Portfolio'>
+        <section className='Portfolio'>
             <div className='Portfolio__title'>
                 Портфолио
             </div>
@@ -18,7 +18,7 @@ function Portfolio() {
                     <img className='Portfolio__link-svg' src={vektorSVG} alt='vektor'></img>
                 </a>
             </div>
-        </div>
+        </section>
     );
 };
 

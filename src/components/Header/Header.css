@@ -1,3 +1,5 @@
+
+
 .Header {
     display: flex;
     color: white;
@@ -8,6 +10,13 @@
     width: 38px;
     height: 38px;
     padding: 18px 0;
+    background-image: url(../../images/logo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Header__logo:hover {
+    opacity: .8;
 }
 
 .Header__navigation {
@@ -28,9 +37,17 @@
     font-weight: 500;
 }
 
+.Header__navigation-film:hover {
+    opacity: .7;
+}
+
 .Header__navigation-saveFilm {
     color: white;
     text-decoration: none;
+}
+
+.Header__navigation-saveFilm:hover {
+    opacity: .7;
 }
 
 .Header__myProfile {
@@ -53,6 +70,10 @@
     align-items: center;
 }
 
+.Header__myProfile:hover {
+    opacity: .8;
+}
+
 .Header__myProfile-img {
     padding-right: 7px;
 }
@@ -65,4 +86,8 @@
     .Header__myProfile {
         display: none;
     }
+}
+
+@media screen and (max-width:320px) {
+    
 }

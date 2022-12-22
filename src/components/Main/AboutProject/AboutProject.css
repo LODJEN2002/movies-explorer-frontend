@@ -121,3 +121,49 @@
         max-width: 319px;
     }
 }
+
+@media screen and (max-width:320px) {
+    .AboutProject {
+        padding: 0 18px;
+    }
+
+    .AboutProject__container {
+        flex-direction: column;
+    }
+
+    .AboutProject__container-title {
+        font-size: 18px;
+        line-height: 22px;
+        margin: 0 0 16px 0;
+    }
+
+    .AboutProject__container-subTitle {
+        margin: 0 0 60px 0;
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .AboutProject__line-small {
+        width: 100px;
+        font-size: 11px;
+        line-height: 13px;
+    }
+
+    .AboutProject__line-big {
+        width: 184px;
+        font-size: 11px;
+        line-height: 13px;
+    }
+
+    .AboutProject__line-small-down {
+        width: 100px;
+        font-size: 11px;
+        line-height: 13px;
+    }
+
+    .AboutProject__line-big-down {
+        width: 184px;
+        font-size: 11px;
+        line-height: 13px;
+    }
+}

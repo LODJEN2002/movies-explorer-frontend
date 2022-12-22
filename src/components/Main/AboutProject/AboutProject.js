@@ -3,13 +3,10 @@ import MainTitle from '../MainTitle/MainTitle';
 
 function AboutProject() {
     return (
-        <div className='AboutProject'>
+        <section className='AboutProject' id="AboutProject">
             <MainTitle 
             title='О проекте'
             />
-            {/* <h2 className='AboutProject__title'>
-                О проекте
-            </h2> */}
             <div className='AboutProject__container'>
                 <div className='AboutProject__container-block'>
                     <h3 className='AboutProject__container-title'>
@@ -46,7 +43,7 @@ function AboutProject() {
                     Front-end
                 </div>
             </div>
-        </div>
+        </section>
     )
 };
 

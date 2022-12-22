@@ -8,3 +8,12 @@
     padding: 110px 0 23px 0;
     border-bottom: 1px solid #DADADA;
 }
+
+@media screen and (max-width:320px) {
+    .MainTitle {
+        padding: 70px 0 28px 0;
+        margin-bottom: 60px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+}

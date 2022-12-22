@@ -14,13 +14,6 @@
     text-align: center;
 }
 
-@media screen and (max-width: 900px) {
-    .ErrorPage__container-title {
-        color:red
-    }
-    
-}
-
 .ErrorPage__container-subtitle {
     margin: 0 0 184px 0;
     font-style: normal;
@@ -41,4 +34,35 @@
     cursor: pointer;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 60px;
+}
+
+.ErrorPage__back:hover {
+    opacity: .7;
+}
+
+@media screen and (max-width: 768px) {
+    .ErrorPage__container-title {
+        margin: 408px 0 5px 0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .ErrorPage__container-title {
+        margin: 329px 0 10px 0;
+        font-size: 80px;
+        line-height: 97px;
+    }
+
+    .ErrorPage__container-subtitle {
+        font-size: 12px;
+        line-height: 15px;
+        margin-bottom: 284px;
+    }
+
+    .ErrorPage__back {
+        font-size: 12px;
+        line-height: 15px;
+        padding-bottom: 30px;
+    }
 }

@@ -41,18 +41,70 @@
 .Footer__yandex {
     margin: 0 20px 0 0;
     padding: 20px 0;
+    text-decoration: none;
+    color:white
+}
 
+.Footer__yandex:hover {
+    opacity: .7;
 }
 
 .Footer__github {
     margin: 0;
     padding: 20px 0;
+    text-decoration: none;
+    color:white
+}
 
+.Footer__github:hover {
+    opacity: .7;
 }
 
 @media screen and (width:768px) {
     .Footer {
-        padding: 0 50px;
+        padding: 0 30px;
     }
-    
+
+}
+
+@media screen and (width:320px) {
+    .Footer {
+        padding: 0 10px;
+    }
+
+    .Footer__text {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .Footer__container {
+        flex-direction: column-reverse;
+    }
+
+    .Footer__container-right {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .Footer__yandex {
+        margin: 0;
+        padding: 30px 0 12px 0;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .Footer__github {
+        padding: 0 0 30px 0;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .Footer__year {
+        text-align: center;
+        color: #8B8B8B;
+        padding: 0 0 20px 0;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
 }

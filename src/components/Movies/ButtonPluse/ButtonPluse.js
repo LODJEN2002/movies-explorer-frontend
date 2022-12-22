@@ -2,9 +2,9 @@ import './ButtonPluse.css';
 
 function ButtonPluse() {
     return (
-        <div className='ButtonPluse'>
+        <section className='ButtonPluse'>
             <button className='ButtonPluse__head'>Ещё</button>
-        </div>
+        </section>
     );
 };
 

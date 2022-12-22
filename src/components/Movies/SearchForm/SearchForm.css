@@ -36,5 +36,22 @@
     Height: 34px;
     font-family: 'Inter';
     border: none;
-    cursor:pointer;
+    cursor: pointer;
+}
+
+.SearchForm__button:hover {
+    opacity: .8;
+}
+
+@media screen and (max-width: 320px) {
+    .SearchForm {
+        padding: 80px 0 0 0;
+        margin-bottom: 10px;
+    }
+
+    .FilterCheckbox__title {
+        font-size: 11px;
+        line-height: 18px;
+    }
+
 }

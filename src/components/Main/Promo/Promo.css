@@ -8,6 +8,10 @@
     margin: 18px 70px;
 }
 
+.Promo__header-logo:hover {
+    opacity: .8;
+}
+
 .Promo__container {
     display: flex;
     margin: 21px 70px 0 auto;
@@ -23,6 +27,10 @@
     color: white;
     text-decoration: none;
     height: 16px;
+}
+
+.Promo__signup:hover {
+    opacity: .7;
 }
 
 .Promo__signin {
@@ -44,6 +52,12 @@
     text-decoration: none;
 }
 
+
+
+.Promo__signin:hover {
+    opacity: .7;
+}
+
 .Promo__signin-button {
     background-color: #3DDC84;
 }
@@ -52,6 +66,7 @@
     height: 524px;
     background-color: #073042;
     background-image: url('../../../images/pic__COLOR_landing-logo.svg');
+    background-size: 248px;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -63,7 +78,6 @@
     font-size: 50px;
     line-height: 58px;
     text-align: center;
-    width: 730px;
     margin: 0 auto;
     padding-top: 184px;
 }
@@ -78,3 +92,43 @@
     }
 }
 
+@media screen and (max-width: 335px) {
+    .Promo__header {
+        justify-content: space-between;
+    }
+
+    .Promo__header-logo {
+        margin: 18px 14px;
+        width: 38px;
+        height: 38px;
+    }
+
+    .Promo__container {
+        margin: 24px 14px;
+    }
+
+    .Promo__signup {
+        margin-right: 14px;
+        margin-top: 5px;
+        font-size: 10px;
+        line-height: 16px;
+    }
+
+    .Promo__signin {
+        width: 54px;
+        height: 26px;
+        font-size: 10px;
+        line-height: 16px;
+    }
+
+    .Promo__baner {
+        height: 570px;
+        background-position-y: 142px;
+    }
+
+    .Promo__baner-title {
+        padding-top: 207px;
+        font-size: 31px;
+        line-height: 39px;
+    }
+}

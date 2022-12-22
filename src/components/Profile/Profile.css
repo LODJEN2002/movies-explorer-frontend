@@ -53,8 +53,14 @@
     font-size: 13px;
     line-height: 16px;
     margin-bottom: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white
 }
 
+.Profile__footer-edit:hover {
+    opacity: .7;
+}
 
 .Profile__footer-exit {
     font-style: normal;
@@ -62,4 +68,84 @@
     font-size: 13px;
     line-height: 16px;
     color: #EE3465;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.Profile__footer-exit:hover {
+    opacity: .7;
+}
+
+@media screen and (max-width:768px) {
+    .Profile {
+        padding: 0 30px;
+    }
+
+    .Profile__greeting {
+        margin-top: 236px;
+    }
+
+    .Profile__ifco-Container {
+        margin-top: 79px;
+    }
+
+    .Profile__info-email {
+        margin-bottom: 194px;
+    }
+
+    .Profile__info-text {
+        margin: 17px 0 16px 0;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .Profile__ifco-Container {
+        margin-top: 80px;
+        width: auto;
+        padding: 0 16px;
+    }
+}
+
+
+@media screen and (max-width:320px) {
+    .Profile {
+        padding: 0 14px;
+    }
+
+    .Profile__greeting {
+        margin-top: 70px;
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    .Profile__info-email {
+        margin-bottom: 379px;
+    }
+
+    .Profile__ifco-Container {
+        margin-top: 80px;
+        width: auto;
+        padding: 0 16px;
+    }
+
+    .Profile__info-text {
+        font-size: 11px;
+        line-height: 13px;
+    }
+
+    .Profile__info-text {
+        font-size: 11px;
+        line-height: 13px;
+    }
+
+    .Profile__footer-edit {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .Profile__footer-exit {
+        font-size: 12px;
+        line-height: 15px;
+        padding-bottom: 40px;
+    }
 }
