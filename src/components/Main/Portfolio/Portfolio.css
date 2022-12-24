@@ -18,6 +18,7 @@
 .Portfolio__links {
     display: flex;
     flex-direction: column;
+    padding-left: 0;
 }
 
 .Portfolio__link {

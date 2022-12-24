@@ -19,6 +19,7 @@
 .AboutProject__container {
     display: flex;
     justify-content: space-between;
+    max-width: 1140px;
 }
 
 .AboutProject__container-block {

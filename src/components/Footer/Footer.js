@@ -2,7 +2,7 @@ import './Footer.css'
 
 function Footer() {
     return (
-        <section className='Footer'>
+        <footer className='Footer'>
             <p className='Footer__text'>
                 Учебный проект Яндекс.Практикум х BeatFilm.
             </p>
@@ -15,7 +15,7 @@ function Footer() {
                 <a href='https://github.com/LODJEN2002' target='_blank' className='Footer__github' rel="noreferrer">Github</a>
             </div>
             </div>
-        </section>
+        </footer>
     );
 };
 
