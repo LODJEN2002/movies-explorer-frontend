@@ -11,8 +11,8 @@ function Footer() {
                 © 2022
             </p>
             <div className='Footer__container-right'>
-                <a href='https://practicum.yandex.ru/' className='Footer__yandex'>Яндекс.Практикум</a>
-                <a href='https://github.com/LODJEN2002' className='Footer__github'>Github</a>
+                <a href='https://practicum.yandex.ru/' target='_blank' className='Footer__yandex' rel="noreferrer">Яндекс.Практикум</a>
+                <a href='https://github.com/LODJEN2002' target='_blank' className='Footer__github' rel="noreferrer">Github</a>
             </div>
             </div>
         </section>
