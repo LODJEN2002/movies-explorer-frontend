@@ -16,8 +16,8 @@
     color: #8B8B8B;
     background-color: #2F2F2F;
     height: 36px;
+    width: 80%;
     margin: 5px 22px;
-    outline: 0;
     border: 0;
     font-family: 'Inter';
     font-style: normal;
@@ -43,6 +43,13 @@
     opacity: .8;
 }
 
+@media screen and (max-width: 768px) {
+    .SearchForm__input {
+        width: 70%;
+    }
+}
+
+
 @media screen and (max-width: 320px) {
     .SearchForm {
         padding: 80px 0 0 0;
@@ -53,5 +60,4 @@
         font-size: 11px;
         line-height: 18px;
     }
-
 }

@@ -37,6 +37,8 @@
     font-size: 18px;
     line-height: 22px;
     margin-bottom: 28px;
+    text-decoration: none;
+    color: white;
 }
 
 .Menu__myProfile {
@@ -67,6 +69,15 @@
     justify-content: center;
 }
 
+.Menu__content-li {
+    margin-bottom: 28px;
+}
+
+li {
+    list-style-type: none;
+}
+
+
 @media screen and (max-width:768px) {
     .Menu {
         display: flex;
@@ -74,6 +85,27 @@
 
     .Menu-opened {
         display: flex;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .Menu {
+        width: 100%;
+    }
+
+    .Menu-opened {
+        /* text-align: center; */
+        width: 100%;
+    }
+
+    .Menu__content {
+        text-align: center;
+        width: 100%;
+    }
+
+    .Menu__content-link {
+        width: 100%;
+        padding: 0;
     }
 }
 

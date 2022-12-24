@@ -11,6 +11,7 @@
 }
 
 .AboutMe__info {
+    margin-right: 40px;
     max-width: 600px;
     margin-bottom: 101px;
 }
@@ -66,6 +67,7 @@
     }
 
     .AboutMe__info {
+        margin-right: 49px;
         max-width: 364px;
     }
 
@@ -98,6 +100,28 @@
     }
 }
 
+@media screen and (max-width:640px) {
+    .AboutMe__container {
+        display: flex;
+        padding-top: 0;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    .AboutMe__info {
+        min-width: 100%;
+    }
+    
+    .AboutMe__info-myLife {
+        width: 100%;
+    }
+
+    .AboutMe__photo {
+        margin-top: 60px;
+        padding-bottom: 40px;
+    }
+}
+
 @media screen and (max-width:500px) {
     .AboutMe {
         background-color: #202020;
@@ -120,12 +144,6 @@
 @media screen and (max-width:320px) {
     .AboutMe {
         padding: 0 14px;
-    }
-
-    .AboutMe__container {
-        display: flex;
-        padding-top: 0;
-        flex-direction: column-reverse;
     }
 
     .AboutMe__photo {

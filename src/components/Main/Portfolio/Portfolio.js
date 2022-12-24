@@ -8,13 +8,13 @@ function Portfolio() {
                 Портфолио
             </div>
             <div className='Portfolio__links'>
-                <a className='Portfolio__link' href='asd'>Статичный сайт
+                <a className='Portfolio__link' target='_blanck' href='https://github.com/LODJEN2002/react-mesto-api-full'>Статичный сайт
                     <img className='Portfolio__link-svg' src={vektorSVG} alt='vektor'></img>
                 </a>
-                <a className='Portfolio__link' href='asd'>Адаптивный сайт
+                <a className='Portfolio__link' target='_blanck' href='https://github.com/LODJEN2002/russian-travel'>Адаптивный сайт
                     <img className='Portfolio__link-svg' src={vektorSVG} alt='vektor'></img>
                 </a>
-                <a className='Portfolio__link Portfolio__link-last' href='asd'>Одностраничное приложение
+                <a className='Portfolio__link Portfolio__link-last' target='_blanck' href='https://github.com/LODJEN2002/how-to-learn'>Одностраничное приложение
                     <img className='Portfolio__link-svg' src={vektorSVG} alt='vektor'></img>
                 </a>
             </div>

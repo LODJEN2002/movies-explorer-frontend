@@ -17,7 +17,7 @@ function AboutProject() {
                         вёрстку, добавление функциональности и финальные доработки.
                     </p>
                 </div>
-                <div className='AboutProject__container-block'>
+                <div className='AboutProject__container-block AboutProject__container-block-right'>
                     <h3 className='AboutProject__container-title'>
                         На выполнение диплома ушло 5 недель
                     </h3>

@@ -7,8 +7,13 @@ import Profile from '../Profile/Profile';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
 import ErrorPage from '../ErrorPage/ErrorPage';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    document.documentElement.setAttribute('lang', 'ru')
+  }, [])
+  
   return (
     <div className="App">
       <Routes>
@@ -19,9 +24,9 @@ function App() {
         <Route path='/signup' element={<Register />} />
         <Route path='/signin' element={<Login />} />
         <Route path='/404' element={<ErrorPage />} />
-        <Route 
-        path="*"
-        element={<Navigate to='/404' />} 
+        <Route
+          path="*"
+          element={<Navigate to='/404' />}
         />
       </Routes>
     </div>

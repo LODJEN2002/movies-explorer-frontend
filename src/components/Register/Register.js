@@ -14,11 +14,11 @@ function Register() {
             </h2>
             <form className='Register__form'>
                 <p className='Register__form-text'>Имя</p>
-                <input className='Register__form-input'></input>
+                <input className='Register__form-input' required></input>
                 <p className='Register__form-text'>E-mail</p>
-                <input className='Register__form-input' type='Email'></input>
+                <input className='Register__form-input' type='Email' required></input>
                 <p className='Register__form-text'>Пароль</p>
-                <input className='Register__form-input Register__form-password' type='password'></input>
+                <input className='Register__form-input Register__form-password' type='password' required></input>
                 <p className='Register__form-error'>Что-то пошло не так...</p>
                 <button className='Register__form-submit' type='submit'>Зарегистрироваться</button>
             </form>

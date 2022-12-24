@@ -13,9 +13,9 @@ function Login() {
             </h2>
             <form className='Login__form'>
                 <p className='Login__form-text'>E-mail</p>
-                <input className='Login__form-input' type='Email'></input>
-                <p className='Login__form-text'>Пароль</p>
-                <input className='Login__form-input Login__form-password' type='password'></input>
+                <input className='Login__form-input' type='Email' required></input>
+                <p className='Login__form-text' >Пароль</p>
+                <input className='Login__form-input Login__form-password' type='password' required></input>
                 <p className='Login__form-error'>Что-то пошло не так...</p>
                 <button className='Login__form-submit' type='submit'>Зарегистрироваться</button>
             </form>

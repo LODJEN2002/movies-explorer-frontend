@@ -1,6 +1,6 @@
+import './AboutMe.css'
 import MainTitle from '../MainTitle/MainTitle';
 import photo from '../../../images/pic__COLOR_pic.png'
-import './AboutMe.css'
 
 function AboutMe() {
     return (
