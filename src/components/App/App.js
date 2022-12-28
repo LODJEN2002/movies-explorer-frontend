@@ -13,6 +13,10 @@ function App() {
   useEffect(() => {
     document.documentElement.setAttribute('lang', 'ru')
   }, [])
+
+  function xx(s) {
+    console.log(s)
+  }
   
   return (
     <div className="App">
@@ -21,7 +25,9 @@ function App() {
         <Route path='/movies' element={<Movies />} />
         <Route path='/saved-movies' element={<SavedMovies />} />
         <Route path='/profile' element={<Profile />} />
-        <Route path='/signup' element={<Register />} />
+        <Route path='/signup' element={<Register
+        vkid={xx}
+        />} />
         <Route path='/signin' element={<Login />} />
         <Route path='/404' element={<ErrorPage />} />
         <Route
