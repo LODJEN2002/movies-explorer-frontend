@@ -14,8 +14,8 @@ function Header() {
         <header className='Header'>
             <Link className='Header__logo' to="/"></Link>
             <div className='Header__navigation'>
-                <a className='Header__navigation-film' href='movies'>Фильмы</a>
-                <a className='Header__navigation-saveFilm' href='saved-movies'>Сохранённые фильмы</a>
+                <Link className='Header__navigation-film' to='/movies'>Фильмы</Link>
+                <Link className='Header__navigation-saveFilm' to='/saved-movies'>Сохранённые фильмы</Link>
             </div>
             <Link className='Header__myProfile' to='/profile'>
                 <img className='Header__myProfile-img' src={myProfileImg} alt='profile-img'></img>
