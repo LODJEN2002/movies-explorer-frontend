@@ -1,0 +1,179 @@
+.AboutMe {
+    background-color: #202020;
+    padding: 0 70px;
+    color: white;
+}
+
+.AboutMe__container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 66px;
+}
+
+.AboutMe__info {
+    margin-right: 40px;
+    max-width: 600px;
+    margin-bottom: 101px;
+}
+
+.AboutMe__info-name {
+    margin: 0 0 18px 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 58px;
+}
+
+.AboutMe__info-age {
+    margin: 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    padding-bottom: 26px;
+}
+
+.AboutMe__info-myLife {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    padding-bottom: 99px;
+}
+
+.AboutMe__info-git {
+    margin: 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    padding-bottom: 101px;
+    text-decoration: none;
+    color: white;
+}
+
+.AboutMe__info-git:hover {
+    opacity: .7;
+}
+
+.AboutMe__photo {
+    width: 270px;
+    height: 327px;
+}
+
+@media screen and (max-width:768px) {
+    .AboutMe {
+        padding: 0 50px;
+    }
+
+    .AboutMe__info {
+        margin-right: 49px;
+        max-width: 364px;
+    }
+
+    .AboutMe__info-name {
+        font-size: 40px;
+        line-height: 40px;
+        margin-bottom: 16px;
+    }
+
+    .AboutMe__info-age {
+        font-size: 12px;
+        line-height: 18px;
+        padding-bottom: 20px;
+    }
+
+    .AboutMe__info-myLife {
+        font-size: 12px;
+        line-height: 18px;
+        padding-bottom: 75px;
+        margin-top: 0;
+    }
+
+    .AboutMe__photo {
+        width: 255px;
+        height: 307px;
+    }
+
+    .AboutMe__info-git {
+        padding-bottom: 91px;
+    }
+}
+
+@media screen and (max-width:640px) {
+    .AboutMe__container {
+        display: flex;
+        padding-top: 0;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    .AboutMe__info {
+        min-width: 100%;
+    }
+    
+    .AboutMe__info-myLife {
+        width: 100%;
+    }
+
+    .AboutMe__photo {
+        margin-top: 60px;
+        padding-bottom: 40px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .AboutMe {
+        background-color: #202020;
+        padding: 0 30px;
+        color: white;
+    }
+
+    .AboutMe__container {
+        display: flex;
+        padding-top: 0;
+        flex-direction: column-reverse;
+    }
+
+    .AboutMe__photo {
+        margin-top: 50px;
+        padding-bottom: 40px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .AboutMe {
+        padding: 0 14px;
+    }
+
+    .AboutMe__photo {
+        margin-top: 0;
+        width: 292px;
+        height: 352px;
+        padding-bottom: 40px;
+    }
+
+    .AboutMe__info-name {
+        font-size: 30px;
+        line-height: 36px;
+        margin-bottom: 20px;
+    }
+
+    .AboutMe__info-age {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .AboutMe__info-myLife {
+        font-size: 11px;
+        line-height: 16px;
+        padding-bottom: 40px;
+        margin-bottom: 0;
+    }
+
+    .AboutMe__info-git {
+        font-size: 14px;
+        line-height: 17px;
+        padding-bottom: 70px;
+    }
+}

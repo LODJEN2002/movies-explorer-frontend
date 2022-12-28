@@ -1,0 +1,23 @@
+.Movies {
+    background-color: #202020;
+    color: white;
+    padding: 0 70px;
+}
+
+@media screen and (max-width:768px) {
+    .Movies {
+        padding: 0 30px;
+    }
+}
+
+@media screen and (max-width:355px) {
+    .Movies {
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width:325px) {
+    .Movies {
+        padding: 0 6px;
+    }
+}

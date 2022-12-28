@@ -1,0 +1,97 @@
+.Burger {
+    position: relative;
+    margin-top: 15px;
+    cursor: pointer;
+    display: none;
+    z-index: 2;
+    /* margin-right: 22px; */
+}
+
+.Burger__btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    right: 30px;
+}
+
+.Burger__btn::before {
+    content: '';
+    position: absolute;
+    top: 11px;
+    width: 28px;
+    height: 3px;
+    background-color: white;
+    transition: all .3s;
+}
+
+.Burger__btn-center {
+    position: absolute;
+    top: 21px;
+    width: 28px;
+    height: 3px;
+    background-color: white;
+}
+
+.Burger__btn::after {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    top: 31px;
+    background-color: white;
+    transition: all .3s;
+}
+
+.Burger__btn-open {
+    position: fixed;
+    right: 30px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    transition: all .3s;
+}
+
+.Burger__btn-open::before {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 3px;
+    top: 21px;
+    background-color: white;
+    transform: rotate(-45deg);
+    transition: all .4s;
+}
+
+.Burger__btn-open::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 3px;
+    bottom: 20px;
+    background-color: white;
+    transform: rotate(45deg);
+    transition: all .4s;
+}
+
+
+@media screen and (max-width:768px) {
+    .Burger {
+        display: block;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .Burger {
+        display: block;
+    }
+
+    .Burger__btn {
+        right: 13px;
+    }
+
+    .Burger__btn-open {
+        right: 13px;
+    }
+}

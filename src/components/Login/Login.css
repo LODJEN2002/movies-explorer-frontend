@@ -1,0 +1,175 @@
+.Login {
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 70px 0 0 0;
+    max-width: 396px;
+}
+
+.Login__logo:hover {
+    opacity: .8;
+}
+
+.Login__greeting {
+    margin: 40px 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.Login__form-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #8B8B8B;
+}
+
+.Login__form-input {
+    padding: 0;
+    width: 381px;
+    height: 46px;
+    background-color: #2F2F2F;
+    border: none;
+    border-radius: 8px;
+    padding-left: 15px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.Login__form-password {
+    color: #EE3465;
+}
+
+.Login__form-error {
+    margin: 0;
+    color: #EE3465;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.Login__form-submit {
+    margin: 179px 0 16px 0;
+    width: 396px;
+    height: 45px;
+    color: white;
+    background-color: #4285F4;
+    border-radius: 3px;
+    border: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    cursor: pointer;
+}
+
+.Login__form-submit:hover {
+    opacity: .8;
+}
+
+.Login__question {
+    color: #8B8B8B;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+}
+
+
+.Login__link-login {
+    text-decoration: none;
+    color: #4285F4;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.Login__link-login:hover {
+    opacity: .7;
+}
+
+@media screen and (max-width:768px) {
+    .Login {
+        padding: 232px 0 0 0;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .Login {
+        text-align: center;
+    }
+
+    .Login__form {
+        text-align: left;
+        padding-left: 30px;
+    }
+
+    .Login__form-input {
+        width: 275px;
+    }
+
+    .Login__form-submit {
+        width: 275px;
+        margin: 267px 0 14px 0;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+@media screen and (max-width:340px) {
+    .Login__form {
+        padding-left: 10px;
+        text-align: left;
+    }
+}
+
+
+@media screen and (max-width:320px) {
+    .Login {
+        padding: 56px 30px 0 30px;
+        text-align: center;
+    }
+
+    .Login__greeting {
+        margin: 50px 0 80px 0;
+    }
+
+    .Login__form {
+        padding-left: 0;
+        text-align: left;
+    }
+
+    .Login__form-input {
+        width: 245px;
+    }
+
+    .Login__form-submit {
+        width: 260px;
+        margin: 267px 0 14px 0;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .Login__question {
+        font-size: 12px;
+        line-height: 15px;
+        margin: 14px 0 30px 0;
+    }
+
+    .Login__link-login {
+        font-size: 12px;
+        line-height: 15px;
+        margin-left: 7px;
+    }
+}

@@ -1,0 +1,151 @@
+.Profile {
+    padding: 0 70px;
+    color: white;
+}
+
+.Profile__greeting {
+    margin: 0;
+    margin-top: 74px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.Profile__ifco-Container {
+    margin-top: 123px;
+    width: 410px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Profile__info-name {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #424242;
+}
+
+.Profile__info-email {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 220px;
+}
+
+.Profile__info-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+.Profile__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Profile__footer-edit {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white
+}
+
+.Profile__footer-edit:hover {
+    opacity: .7;
+}
+
+.Profile__footer-exit {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    color: #EE3465;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.Profile__footer-exit:hover {
+    opacity: .7;
+}
+
+@media screen and (max-width:768px) {
+    .Profile {
+        padding: 0 30px;
+    }
+
+    .Profile__greeting {
+        margin-top: 236px;
+    }
+
+    .Profile__ifco-Container {
+        margin-top: 79px;
+    }
+
+    .Profile__info-email {
+        margin-bottom: 194px;
+    }
+
+    .Profile__info-text {
+        margin: 17px 0 16px 0;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .Profile__ifco-Container {
+        margin-top: 80px;
+        width: auto;
+        padding: 0 16px;
+    }
+}
+
+
+@media screen and (max-width:320px) {
+    .Profile {
+        padding: 0 14px;
+    }
+
+    .Profile__greeting {
+        margin-top: 70px;
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    .Profile__info-email {
+        margin-bottom: 379px;
+    }
+
+    .Profile__ifco-Container {
+        margin-top: 80px;
+        width: auto;
+        padding: 0 16px;
+    }
+
+    .Profile__info-text {
+        font-size: 11px;
+        line-height: 13px;
+    }
+
+    .Profile__info-text {
+        font-size: 11px;
+        line-height: 13px;
+    }
+
+    .Profile__footer-edit {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .Profile__footer-exit {
+        font-size: 12px;
+        line-height: 15px;
+        padding-bottom: 40px;
+    }
+}

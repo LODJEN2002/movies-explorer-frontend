@@ -1,0 +1,31 @@
+.ButtonPluse {
+    display: flex;
+    /* width: 1140px; */
+    height: 36px;
+    background-color: #2F2F2F;
+    border-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    cursor: pointer;
+    margin-bottom: 80px;
+    cursor: pointer;
+}
+
+.ButtonPluse:hover {
+    opacity: .8;
+}
+
+.ButtonPluse__head {
+    background-color: #2F2F2F;
+    color: white;
+    border: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    cursor: pointer;
+    line-height: 15px;
+}
