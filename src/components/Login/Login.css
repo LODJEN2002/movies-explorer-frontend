@@ -56,6 +56,11 @@
     line-height: 12px;
 }
 
+.Login__form-error-hidden {
+    margin: 0;
+    visibility: hidden;
+}
+
 .Login__form-submit {
     margin: 179px 0 16px 0;
     width: 396px;
@@ -70,6 +75,21 @@
     font-size: 14px;
     line-height: 17px;
     cursor: pointer;
+}
+
+.Login__form-submit-disabled {
+    margin: 179px 0 16px 0;
+    width: 396px;
+    height: 45px;
+    color: black;
+    background-color: white;
+    border-radius: 3px;
+    border: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    cursor:no-drop
 }
 
 .Login__form-submit:hover {

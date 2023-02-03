@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import React from "react";
 
 
@@ -10,12 +10,10 @@ export function useForm() {
         const target = e.target;
         const value = target.value;
         const name = target.name;
-        setValues({ ...values, [name]: value});
-        console.log(values)
+        setValues({ ...values, [name]: value });
     }
 
     return { values, handleChange, setValues };
-
 }
 
 export function useFormWithValidation() {
@@ -29,8 +27,7 @@ export function useFormWithValidation() {
         const value = target.value;
         setValues({ ...values, [name]: value });
         setErrors({ ...errors, [name]: target.validationMessage });
-        setIsValid(target.closest("form").checkValidity());
-        console.log(isValid)
+        setIsValid(target.closest('form').checkValidity());
     };
 
     const resetForm = useCallback(
@@ -44,3 +41,14 @@ export function useFormWithValidation() {
 
     return { values, handleChange, errors, isValid, resetForm };
 }
+
+export function useInputWithValidation() {
+    const [isValid, setIsValid] = React.useState(true);
+
+    function handleChange(e) {
+        const target = e.target;
+            setIsValid(target.checkValidity())
+    }
+
+    return { handleChange, isValid};
+};

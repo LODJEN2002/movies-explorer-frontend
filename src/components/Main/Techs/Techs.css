@@ -1,6 +1,7 @@
 .Techs {
     background-color: #272727;
-    padding: 0 70px;
+    /* padding: 0 70px; */
+    margin: 0 -70px;
 }
 
 .Techs__main {
@@ -56,6 +57,17 @@
 
 .Techs__seven-block-mongo {
     margin-right: 0;
+}
+
+.MainTitleTex {
+    margin: 0 70px;
+    color: white;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    padding: 110px 0 23px 0;
+    border-bottom: 1px solid #DADADA;
 }
 
 @media screen and (max-width:768px) {

@@ -5,12 +5,19 @@ import Techs from './Techs/Techs';
 import AboutMe from './AboutMe/AboutMe';
 import Portfolio from './Portfolio/Portfolio';
 import Footer from '../Footer/Footer';
+import PromoBaner from './PromoBaner/PromoBaner';
+import './Main.css';
+import { useEffect } from 'react';
 
 
-function Main() {
+
+function Main({loggedIn}) {
     return (
-        <main>
-            <Promo />
+        <main className='main'>
+            <Promo 
+            loggedIn={loggedIn}
+            />
+            <PromoBaner />
             <NavTab />
             <AboutProject />
             <Techs />

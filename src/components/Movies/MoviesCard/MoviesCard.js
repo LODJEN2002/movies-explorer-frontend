@@ -1,21 +1,72 @@
 import './MoviesCard.css';
-
-
 import { useState } from 'react';
+import mainApi from '../../../utils/MainApi';
 
 function MoviesCard(props) {
+    const { country,
+        description,
+        director,
+        duration,
+        key,
+        movieId,
+        nameEN,
+        nameRU,
+        link,
+        trailerLink,
+        updated_at,
+        year,
+        _id,
+    } = props
     const [like, setLike] = useState(false)
+
+    function handleLikeCard() {
+        setLike(!like)
+        let image = 'https://api.nomoreparties.co' + props.link
+        let thumbnail = 'https://api.nomoreparties.co' + props.link
+
+        mainApi.saveMovie(
+            country,
+            director,
+            duration,
+            year,
+            description,
+            image,
+            trailerLink,
+            thumbnail,
+            movieId,
+            nameRU,
+            nameEN,
+            _id,
+        )
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+    }
+
+    function onCardDelete() {
+        props.onCardDelete(props)
+        console.log(props)
+    }
 
     return (
         <section className='MoviesCard'>
-            <img className='MoviesCard__img' src={props.link} alt='kot' />
+            <a
+                href={props.trailerLink}
+                target='_blank' rel="noreferrer"
+            >
+                <img
+                    className='MoviesCard__img'
+                    src={'https://api.nomoreparties.co' + props.link}
+                    alt={props.nameRU} />
+            </a>
             <div className='MoviesCard__container'>
-                <h3 className='MoviesCard__container-title'>{props.title}</h3>
-                <button onClick={() => setLike(!like)} className={like ? 'MoviesCard__button-like' : 'MoviesCard__button-dislike'}>
+                <h3 className='MoviesCard__container-title'>{props.nameRU}</h3>
+                <button
+                    onClick={like ? onCardDelete : handleLikeCard}
+                    className={like ? 'MoviesCard__button-like' : 'MoviesCard__button-dislike'}>
                 </button>
             </div>
             <p className='MoviesCard__time'>
-                {props.timeMovie}
+                {props.duration}
             </p>
         </section>
     );

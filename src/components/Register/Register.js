@@ -1,30 +1,31 @@
 import './Register.css';
 import logo from '../../images/logo.svg';
 import { Link } from 'react-router-dom';
-import { useRef, useState } from 'react';
-import { useForm, useFormWithValidation } from '../../utils/validation';
+import { useRef } from 'react';
+import { useFormWithValidation, useInputWithValidation } from '../../utils/validation';
 
 
-function Register(props) {
-    // const [inputName, setInputName] = useState(false);
+function Register({ onUpdateRegistr }) {
+
     const refName = useRef();
     const refEmail = useRef();
     const refPassword = useRef();
 
 
-    const form = useForm()
-    // const errorForm = useFormWithValidation()
+    const errorForm = useFormWithValidation()
+    const nameInput = useInputWithValidation()
+    const errorInput = useInputWithValidation()
 
     function handleSubmit(e) {
-        e.preventDefault()
-
-        props.vkid({
-            name: refName.current.value,
-            email: refEmail.current.value,
-            pas: refPassword.current.value
+        e.preventDefault();
+        
+        onUpdateRegistr({
+            name : refName.current.value,
+            email : refEmail.current.value,
+            password : refPassword.current.value,
         })
     }
-
+    
     return (
         <section className='Register'>
             <Link to='/'>
@@ -34,27 +35,30 @@ function Register(props) {
                 Добро пожаловать!
             </h2>
             <form className='Register__form'
-                // onChange={form.handleChange}
-                onSubmit={handleSubmit}
+            onSubmit={handleSubmit}
+            onChange={errorForm.handleChange}
             >
                 <p className='Register__form-text'>Имя</p>
                 <input
+                    onChange={nameInput.handleChange}
                     ref={refName}
                     className='Register__form-input'
                     name='name' required ></input>
-                {/* {(nameDirty && nameErrorMessange) && <div style={{ color: 'red' }}>{nameErrorMessange}</div>} */}
+                <span className={nameInput.isValid ? 'Register__form-error-hidden' : 'Register__form-error'}> Ошибка валидации!</span>
                 <p className='Register__form-text'>E-mail</p>
                 <input
+                    onChange={errorInput.handleChange}
                     ref={refEmail}
                     name='Email'
                     className='Register__form-input' type='Email' required></input>
+                <span className={errorInput.isValid ? 'Register__form-error-hidden' : 'Register__form-error'}> Ошибка валидации!</span>
                 <p className='Register__form-text'>Пароль</p>
                 <input
                     ref={refPassword}
                     name='password'
                     className='Register__form-input Register__form-password' type='password' required></input>
-                <p className='Register__form-error'>Что-то пошло не так...</p>
-                <button className='Register__form-submit' type='submit'>Зарегистрироваться</button>
+                {/* <span className='Register__form-error Register__form-error-hidden'>Что-то пошло не так...</span> */}
+                <button className={errorForm.isValid ? 'Register__form-submit' : 'Register__form-submit-disabled'} type='submit' disabled={errorForm.isValid ? false : true}>Зарегистрироваться</button>
             </form>
             <p className='Register__question'>
                 Уже зарегистрированы?
