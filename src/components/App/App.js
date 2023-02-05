@@ -51,7 +51,6 @@ function App() {
 
   function handleSubmitLogin(inputs) {
     const { email, password } = inputs;
-    console.log(email)
 
     mainApi.login(password, email)
       .then(res => res.token)

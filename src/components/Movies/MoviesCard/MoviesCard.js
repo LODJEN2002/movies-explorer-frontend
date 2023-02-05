@@ -15,7 +15,7 @@ function MoviesCard(props) {
         trailerLink,
         updated_at,
         year,
-        _id,
+        // _id,
     } = props
     const [like, setLike] = useState(false)
 
@@ -36,15 +36,24 @@ function MoviesCard(props) {
             movieId,
             nameRU,
             nameEN,
-            _id,
+            // _id,
         )
             .then(res => console.log(res))
             .catch(err => console.log(err))
     }
 
     function onCardDelete() {
-        props.onCardDelete(props)
-        console.log(props)
+        setLike(!like)
+        mainApi.getSavedMovies()
+            .then((res) => {
+                res.forEach((element) => {
+                    if (element.movieId === movieId) {
+                        console.log(element)
+                        mainApi.deliteMovies(element._id)
+                    }
+                })
+
+            })
     }
 
     return (

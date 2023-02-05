@@ -15,11 +15,7 @@ function Movies() {
     const [badRequest, setBadRequest] = useState(false)
     const [badRequestText, setBadRequestText] = useState('')
 
-    function handleDeleteClick(card) {
-        console.log(card)
-        // mainApi.deliteMovies(card.mov)
-            // .then(setSavedMoviesList((cards) => cards.filter(element => element._id !== card._id)))
-    }
+    
 
 
     const matched = (str, match) => str.toLowerCase().includes(match.toLowerCase());
@@ -70,7 +66,6 @@ function Movies() {
                     setBadRequestText('Ничего не найдено')
                 }
                 setCardList(resultArr, ...cardList)
-                console.log(cardList)
             })
             .catch((err) => {
                 console.log(err)
@@ -78,6 +73,12 @@ function Movies() {
                 setBadRequestText('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен.Подождите немного и попробуйте ещё раз')
             })
             .finally(() => setPreloaderVisibility(false))
+    }
+
+    function handleDeleteClick(card) {
+        // console.log(card)
+        // mainApi.deliteMovies(card.mov)
+            // .then(setSavedMoviesList((cards) => cards.filter(element => element._id !== card._id)))
     }
 
     return (

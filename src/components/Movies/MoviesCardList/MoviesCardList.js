@@ -3,8 +3,6 @@ import MoviesCard from '../MoviesCard/MoviesCard';
 import Preloader from '../../Preloader/Preloader';
 
 function MoviesCardList({ cards, preloaderVisibility, badRequest, badRequestText, onCardDelete }) {
-    console.log(cards)
-
     return (
         <section className='MoviesCardList'>
             {preloaderVisibility && <Preloader />}
@@ -23,7 +21,7 @@ function MoviesCardList({ cards, preloaderVisibility, badRequest, badRequestText
                     trailerLink={card.trailerLink}
                     updated_at={card.updated_at}
                     year={card.year}
-                    _id={card._id}
+                    // _id={card._id}
                     onCardDelete={onCardDelete}
                 />
             ))}
