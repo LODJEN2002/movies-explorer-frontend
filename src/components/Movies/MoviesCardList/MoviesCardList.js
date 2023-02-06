@@ -2,7 +2,14 @@ import './MoviesCardList.css';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import Preloader from '../../Preloader/Preloader';
 
-function MoviesCardList({ cards, preloaderVisibility, badRequest, badRequestText, onCardDelete }) {
+function MoviesCardList({ cards, preloaderVisibility, badRequest, badRequestText }) {
+    const arr = [1,2,3,4,5,6,7]
+
+    console.log(arr.forEach((element, index) => {
+        console.log(element, index)
+    }))
+
+
     return (
         <section className='MoviesCardList'>
             {preloaderVisibility && <Preloader />}
@@ -21,8 +28,6 @@ function MoviesCardList({ cards, preloaderVisibility, badRequest, badRequestText
                     trailerLink={card.trailerLink}
                     updated_at={card.updated_at}
                     year={card.year}
-                    // _id={card._id}
-                    onCardDelete={onCardDelete}
                 />
             ))}
         </section>

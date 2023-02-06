@@ -55,7 +55,6 @@ function Movies() {
 
         moviesApi.getMovies()
             .then((res) => {
-                console.log(res)
                 let resultArr = res.filter((item) => {
                     if (matched(item.nameRU, name)) {
                         return true
@@ -75,12 +74,6 @@ function Movies() {
             .finally(() => setPreloaderVisibility(false))
     }
 
-    function handleDeleteClick(card) {
-        // console.log(card)
-        // mainApi.deliteMovies(card.mov)
-            // .then(setSavedMoviesList((cards) => cards.filter(element => element._id !== card._id)))
-    }
-
     return (
         <section className='Movies'>
             <Header
@@ -93,7 +86,6 @@ function Movies() {
                 preloaderVisibility={preloaderVisibility}
                 badRequest={badRequest}
                 badRequestText={badRequestText}
-                onCardDelete={handleDeleteClick}
             />
             <ButtonPluse />
             <Footer />

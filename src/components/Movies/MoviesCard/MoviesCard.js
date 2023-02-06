@@ -1,5 +1,5 @@
 import './MoviesCard.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import mainApi from '../../../utils/MainApi';
 
 function MoviesCard(props) {
@@ -7,20 +7,28 @@ function MoviesCard(props) {
         description,
         director,
         duration,
-        key,
         movieId,
         nameEN,
         nameRU,
-        link,
         trailerLink,
-        updated_at,
         year,
-        // _id,
     } = props
+
     const [like, setLike] = useState(false)
 
+    useEffect(() => {
+        mainApi.getSavedMovies()
+            .then((res) => {
+                res.find((element) => {
+                    if (element.movieId === movieId) {
+                        setLike(true)
+                    }
+                })
+            })
+            .catch(err => console.log(err))
+    }, [])
+
     function handleLikeCard() {
-        setLike(!like)
         let image = 'https://api.nomoreparties.co' + props.link
         let thumbnail = 'https://api.nomoreparties.co' + props.link
 
@@ -38,7 +46,7 @@ function MoviesCard(props) {
             nameEN,
             // _id,
         )
-            .then(res => console.log(res))
+            .then(() => setLike(!like))
             .catch(err => console.log(err))
     }
 
@@ -48,11 +56,9 @@ function MoviesCard(props) {
             .then((res) => {
                 res.forEach((element) => {
                     if (element.movieId === movieId) {
-                        console.log(element)
                         mainApi.deliteMovies(element._id)
                     }
                 })
-
             })
     }
 
