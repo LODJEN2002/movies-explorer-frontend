@@ -16,27 +16,28 @@ function Profile({ props }) {
     useEffect(() => {
         mainApi.getProfileInfo()
             .then(res => setCurrentUser(res))
-    }, [currentUser])
+    }, [currentUser.name, currentUser.email, setCurrentUser])
 
     function handleSubmit(e) {
         e.preventDefault()
+
+        setCurrentUser({
+            name: nameRef.current.value,
+            email: emailRef.current.value
+        })
 
         onUpdateProfile({
             name: nameRef.current.value,
             email: emailRef.current.value
         })
-
-        // setCurrentUser({
-        //     name:nameRef.current.value,
-        //     email:emailRef.current.value
-        // })
     }
 
     function handleExit() {
         localStorage.removeItem('token')
+        localStorage.removeItem('movies')
+        localStorage.removeItem('value')
         setLoggedIn(false)
     }
-
 
     return (
         <section className='Profile'>
@@ -71,10 +72,12 @@ function Profile({ props }) {
                         type='email'
                         className='Profile__info-input' ></input>
                 </div>
-                <span className={errorTextProfile ? 'Profile__info-error' : 'Profile__info-error-hidden'}>
+                <span
+                    className={errorTextProfile ? 'Profile__info-error' : 'Profile__info-error-hidden'}>
                     Что-то пошло не так...
                 </span>
-                <button className={fromValidation.isValid ? 'Profile__footer-edit' : 'Profile__footer-edit-disabled'}
+                <button
+                    className={fromValidation.isValid ? 'Profile__footer-edit' : 'Profile__footer-edit-disabled'}
                     disabled={fromValidation.isValid ? false : true}
                 >Редактировать </button>
             </form>

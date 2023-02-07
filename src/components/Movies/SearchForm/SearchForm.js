@@ -1,18 +1,19 @@
 import './SearchForm.css'
 import FilterCheckbox from './FilterCheckbox/FilterCheckbox';
-import { useRef } from 'react';
-// import mainApi from '../../../utils/MainApi';
+import { useState } from 'react';
 
-function SearchForm({ handleSearch }) {
-    const searchRef = useRef();
+function SearchForm({ handleSearch, setCheckBox, checkBox, handleCheckBoxClick, valueSearch, setValueSearch }) {
+    const [value, setValue] = useState(valueSearch)
+
+    function handleChenge(e) {
+        setValue(e.target.value)
+    }
 
     function handleSubmit(e) {
         e.preventDefault()
 
-        // console.log('Submit')
-
         handleSearch({
-            name: searchRef.current.value
+            name: value
         })
     }
 
@@ -24,13 +25,18 @@ function SearchForm({ handleSearch }) {
             >
                 <div className='SearchForm__container'>
                     <input className='SearchForm__input'
-                        ref={searchRef}
+                        onChange={handleChenge}
+                        value={value}
                         placeholder='Фильм'
                         required
                     />
                     <button className='SearchForm__button'>Найти</button>
                 </div>
-                <FilterCheckbox />
+                <FilterCheckbox
+                    checkBox={checkBox}
+                    setCheckBox={setCheckBox}
+                    handleCheckBoxClick={handleCheckBoxClick}
+                />
             </form>
         </section>
     );

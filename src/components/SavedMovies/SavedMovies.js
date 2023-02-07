@@ -9,12 +9,47 @@ import mainApi from '../../utils/MainApi';
 
 function SavedMovies() {
     const [savedMoviesList, setSavedMoviesList] = useState([])
+    const [checkBox, setCheckBox] = useState(false)
+    const [valueSearch, setValueSearch] = useState('')
+    const matched = (str, match) => str.toLowerCase().includes(match.toLowerCase());
+
 
     useEffect(() => {
         mainApi.getSavedMovies()
-            .then(res => setSavedMoviesList(res))
+            .then((res) => {
+                setSavedMoviesList(res)
+                localStorage.setItem('savedMovies', JSON.stringify(res))
+            })
+
     }, [])
 
+    function handleSearchClick(valueSearch) {
+        const { name } = valueSearch
+
+        let newSavedMoviesList = savedMoviesList.filter((item) => {
+                if (matched(item.nameRU, name)) {
+                    return true
+            }
+        })
+        setSavedMoviesList(newSavedMoviesList)
+
+    }
+
+
+    function handleCheckBoxClick() {
+        if (!checkBox) {
+            let newSavedMoviesList = savedMoviesList.filter((card) => {
+                if (card.duration <= 40) {
+                    return card
+                }
+            })
+            setSavedMoviesList(newSavedMoviesList)
+        }
+        if (checkBox) {
+            setSavedMoviesList(JSON.parse(localStorage.getItem('savedMovies')))
+        }
+
+    }
 
     function handleDeleteClick(card) {
         mainApi.deliteMovies(card._id)
@@ -24,7 +59,13 @@ function SavedMovies() {
     return (
         <section className='SavedMovies'>
             <Header />
-            <SearchForm />
+            <SearchForm
+                valueSearch={valueSearch}
+                handleCheckBoxClick={handleCheckBoxClick}
+                setCheckBox={setCheckBox}
+                checkBox={checkBox}
+                handleSearch={handleSearchClick}
+            />
             <SaveMoviesCardList
                 cards={savedMoviesList}
                 onCardDelete={handleDeleteClick}

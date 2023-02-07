@@ -2,11 +2,6 @@ import './ButtonPluse.css';
 
 function ButtonPluse(props) {
     const { visivleButtonPluse } = props
-    // function handleMoreMovies() {
-    //     props.handleMoreMovies()
-    //     console.log(props.visivleButtonPluse)
-    //     props.visivleButtonPluse && console.log('s')
-    // }
 
     return (
         visivleButtonPluse && <section className='ButtonPluse'>

@@ -3,13 +3,6 @@ import MoviesCard from '../MoviesCard/MoviesCard';
 import Preloader from '../../Preloader/Preloader';
 
 function MoviesCardList({ cards, preloaderVisibility, badRequest, badRequestText }) {
-    const arr = [1,2,3,4,5,6,7]
-
-    // console.log(arr.forEach((element, index) => {
-    //     console.log(element, index)
-    // }))
-
-
     return (
         <section className='MoviesCardList'>
             {preloaderVisibility && <Preloader />}

@@ -8,32 +8,49 @@ import { useEffect, useState } from 'react';
 import moviesApi from '../../utils/MoviesApi';
 
 function Movies() {
-    const [cardList, setCardList] = useState([])
+    const [cardList, setCardList] = useState(JSON.parse(localStorage.getItem('movies')))
     const [resultArr, setResultArr] = useState([])
     const [preloaderVisibility, setPreloaderVisibility] = useState(false)
     const [badRequest, setBadRequest] = useState(false)
     const [badRequestText, setBadRequestText] = useState('')
     const [visivleButtonPluse, setVisivleButtonPluse] = useState(true)
+    const [checkBox, setCheckBox] = useState(JSON.parse(localStorage.getItem('checkBox')))
+    const [valueSearch, setValueSearch] = useState(localStorage.getItem('value'))
 
     useEffect(() => {
-        if (cardList.length === resultArr.length) {
+        localStorage.setItem('movies', JSON.stringify(cardList))
+    }, [cardList])
+
+    useEffect(() => {
+        if (cardList.length === resultArr.length || cardList.length === 12) {
             setVisivleButtonPluse(false)
         }
     }, [cardList, resultArr])
+
+
     const matched = (str, match) => str.toLowerCase().includes(match.toLowerCase());
 
 
     function handleSearch(value) {
+        const { name } = value
+        setPreloaderVisibility(true)
         setVisivleButtonPluse(true)
         setBadRequest(false)
-        setPreloaderVisibility(true)
-        const { name } = value
+        console.log(cardList)
+
 
         moviesApi.getMovies()
             .then((res) => {
                 let resultArr = res.filter((item) => {
-                    if (matched(item.nameRU, name)) {
-                        return true
+                    if (!checkBox) {
+                        if (matched(item.nameRU, name)) {
+                            return true
+                        }
+                    }
+                    if (checkBox) {
+                        if (matched(item.nameRU, name) && item.duration <= 40) {
+                            return true
+                        }
                     }
                 })
                 if (resultArr.length === 0) {
@@ -58,11 +75,14 @@ function Movies() {
                 }
             })
             .catch((err) => {
-                console.log(err)
                 setBadRequest(true)
                 setBadRequestText('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен.Подождите немного и попробуйте ещё раз')
             })
-            .finally(() => setPreloaderVisibility(false))
+            .finally(() => {
+                setPreloaderVisibility(false)
+                localStorage.setItem('value', name)
+                localStorage.setItem('checkBox', JSON.stringify(checkBox))
+            })
     }
 
     function handleMoreMovies() {
@@ -110,12 +130,36 @@ function Movies() {
         }
     }
 
+    function handleCheckBoxClick() {
+        if (!checkBox) {
+            localStorage.setItem('moviesCardList', JSON.stringify(cardList))
+            let newCardList = cardList.filter((card) => {
+                if (card.duration <= 40) {
+                    return card
+                }
+            })
+            if (newCardList.length === 0) {
+                setVisivleButtonPluse(false)
+            }
+            setCardList(newCardList)
+        }
+        if (checkBox) {
+            setCardList(JSON.parse(localStorage.getItem('moviesCardList')))
+            setVisivleButtonPluse(true)
+        }
+    }
+
     return (
         <section className='Movies'>
             <Header
             />
             <SearchForm
+                setCheckBox={setCheckBox}
+                checkBox={checkBox}
+                handleCheckBoxClick={handleCheckBoxClick}
                 handleSearch={handleSearch}
+                valueSearch={valueSearch}
+                setValueSearch={setValueSearch}
             />
             <MoviesCardList
                 cards={cardList}

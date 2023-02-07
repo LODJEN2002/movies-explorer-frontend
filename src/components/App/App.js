@@ -17,8 +17,7 @@ function App() {
   const [loginError, setLoginError] = useState(false);
   const [errorTextProfile, SetErrorTextProfile] = useState(false);
   const [currentUser, setCurrentUser] = useState([])
-
-  const [loggedIn, setLoggedIn] = useState(localStorage.getItem('token') ? true : false)//tyt
+  const [loggedIn, setLoggedIn] = useState(localStorage.getItem('token') ? true : false)
 
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -32,7 +31,6 @@ function App() {
         .catch(err => console.log(err))
     }
   }, [loggedIn])
-
 
   useEffect(() => {
     document.documentElement.setAttribute('lang', 'ru')
@@ -71,13 +69,12 @@ function App() {
       })
   }
 
-  function handleSubmitProfile(inputs, values) {
+  function handleSubmitProfile(inputs) {
     const { name, email } = inputs;
 
     mainApi.profile(email, name)
-      .then(res => SetErrorTextProfile(false))
-      .catch(err => SetErrorTextProfile(true))
-
+      .then(() => SetErrorTextProfile(false))
+      .catch(() => SetErrorTextProfile(true))
   }
 
   return (
@@ -94,7 +91,8 @@ function App() {
               loggedIn={loggedIn}
             />} />
           <Route path='/movies' exact
-            element={<ProtectedRoute component={Movies}
+            element={<ProtectedRoute
+              component={Movies}
               loggedIn={loggedIn}
             />} />
           <Route path='/saved-movies'
