@@ -1,3 +1,3 @@
 # movies-explorer-frontend
 
-# https://disk.yandex.ru/d/sSVlUkJjUeBZcQ
+# https://github.com/LODJEN2002/movies-explorer-frontend/pull/2
