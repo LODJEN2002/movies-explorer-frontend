@@ -28,4 +28,11 @@
     font-size: 12px;
     cursor: pointer;
     line-height: 15px;
+    padding: 8px 460px;
+}
+
+@media screen and (max-width: 1117px) {
+    .ButtonPluse__head{
+        padding: 8px 45%;
+    }
 }
