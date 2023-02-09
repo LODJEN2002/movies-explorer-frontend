@@ -17,7 +17,7 @@ class MainApi {
         return fetch(`${this._baseUrl}/signup`, {
             method: 'POST',
             headers: {
-                'Accept': 'application/json',
+                Accept: 'application/json',
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ password, email, name })
@@ -29,7 +29,7 @@ class MainApi {
         return fetch(`${this._baseUrl}/signin`, {
             method: 'POST',
             headers: {
-                'Accept': 'application/json',
+                Accept: 'application/json',
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ password, email })
