@@ -27,17 +27,13 @@ function Movies() {
         }
     }, [cardList, resultArr])
 
-
     const matched = (str, match) => str.toLowerCase().includes(match.toLowerCase());
-
 
     function handleSearch(value) {
         const { name } = value
         setPreloaderVisibility(true)
         setVisivleButtonPluse(true)
         setBadRequest(false)
-        console.log(cardList)
-
 
         moviesApi.getMovies()
             .then((res) => {
@@ -53,28 +49,29 @@ function Movies() {
                         }
                     }
                 })
+                let newArr = resultArr.slice(0, 12)
                 if (resultArr.length === 0) {
                     setBadRequest(true)
                     setBadRequestText('Ничего не найдено')
                 }
                 if (window.innerWidth >= 1281) {
-                    setResultArr(resultArr)
+                    setResultArr(newArr)
                     setCardList(resultArr.slice(0, 4), ...cardList)
                 }
                 if (window.innerWidth <= 1281) {
-                    setResultArr(resultArr)
+                    setResultArr(newArr)
                     setCardList(resultArr.slice(0, 3), ...cardList)
                 }
                 if (window.innerWidth <= 990) {
-                    setResultArr(resultArr)
+                    setResultArr(newArr)
                     setCardList(resultArr.slice(0, 2), ...cardList)
                 }
                 if (window.innerWidth <= 760) {
-                    setResultArr(resultArr)
+                    setResultArr(newArr)
                     setCardList(resultArr.slice(0, 5), ...cardList)
                 }
             })
-            .catch((err) => {
+            .catch(() => {
                 setBadRequest(true)
                 setBadRequestText('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен.Подождите немного и попробуйте ещё раз')
             })
@@ -86,46 +83,46 @@ function Movies() {
     }
 
     function handleMoreMovies() {
-        if (cardList.length === 4 && window.innerWidth >= 1281) {
+        if (cardList.length === 4 && window.innerWidth >= 1281 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 8), ...cardList)
         }
-        if (cardList.length === 8 && window.innerWidth >= 1281) {
+        if (cardList.length === 8 && window.innerWidth >= 1281 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 12), ...cardList)
         }
-        if (cardList.length === 3 && window.innerWidth <= 1281) {
+        if (cardList.length === 3 && window.innerWidth <= 1281 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 6), ...cardList)
         }
-        if (cardList.length === 6 && window.innerWidth <= 1281) {
+        if (cardList.length === 6 && window.innerWidth <= 1281 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 9), ...cardList)
         }
-        if (cardList.length === 9 && window.innerWidth <= 1281) {
+        if (cardList.length === 9 && window.innerWidth <= 1281 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 12), ...cardList)
         }
-        if (cardList.length === 2 && window.innerWidth <= 990) {
+        if (cardList.length === 2 && window.innerWidth <= 990 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 4), ...cardList)
         }
-        if (cardList.length === 4 && window.innerWidth <= 990) {
+        if (cardList.length === 4 && window.innerWidth <= 990 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 6), ...cardList)
         }
-        if (cardList.length === 6 && window.innerWidth <= 990) {
+        if (cardList.length === 6 && window.innerWidth <= 990 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 8), ...cardList)
         }
-        if (cardList.length === 8 && window.innerWidth <= 990) {
+        if (cardList.length === 8 && window.innerWidth <= 990 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 10), ...cardList)
         }
-        if (cardList.length === 10 && window.innerWidth <= 990) {
+        if (cardList.length === 10 && window.innerWidth <= 990 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 12), ...cardList)
         }
-        if (cardList.length === 5 && window.innerWidth <= 990) {
+        if (cardList.length === 5 && window.innerWidth <= 990 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 7), ...cardList)
         }
-        if (cardList.length === 7 && window.innerWidth <= 990) {
+        if (cardList.length === 7 && window.innerWidth <= 990 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 9), ...cardList)
         }
-        if (cardList.length === 9 && window.innerWidth <= 990) {
+        if (cardList.length === 9 && window.innerWidth <= 990 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 11), ...cardList)
         }
-        if (cardList.length === 11 && window.innerWidth <= 990) {
+        if (cardList.length === 11 && window.innerWidth <= 990 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 12), ...cardList)
         }
     }
