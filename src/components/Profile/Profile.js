@@ -36,6 +36,8 @@ function Profile({ props }) {
         localStorage.removeItem('token')
         localStorage.removeItem('movies')
         localStorage.removeItem('value')
+        localStorage.removeItem('checkBox')
+        localStorage.removeItem('moviesCardList')
         setLoggedIn(false)
     }
 

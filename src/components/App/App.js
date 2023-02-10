@@ -38,11 +38,11 @@ function App() {
 
   function handleSubmitRegister(inputs) {
     const { password, email, name } = inputs
-
     mainApi.register(password, email, name)
-      .then((res) => console.log(res))
-      .then((res) => {
-        handleSubmitLogin(inputs)
+      .then(() => {
+        // let arr = [email, password]
+        console.log({ email: email, password: password })
+        handleSubmitLogin({ email: email, password: password })
       })
       .catch(err => console.log(err))
   }
@@ -58,6 +58,10 @@ function App() {
           setLoggedIn(true)
           navigate('/movies');
           localStorage.setItem('token', token)
+          localStorage.setItem('movies', JSON.stringify([]))
+          localStorage.setItem('value', '')
+          localStorage.setItem('checkBox', false)
+          localStorage.setItem('moviesCardList', JSON.stringify([]))
         }
       })
       .catch((error) => {

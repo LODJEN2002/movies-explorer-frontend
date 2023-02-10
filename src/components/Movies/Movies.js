@@ -18,7 +18,7 @@ function Movies() {
     const [valueSearch, setValueSearch] = useState(localStorage.getItem('value'))
 
     useEffect(() => {
-        localStorage.setItem('movies', JSON.stringify(cardList))
+        localStorage.setItem('movies', JSON.stringify(cardList))// if (checkbox) попробуй))
     }, [cardList])
 
     useEffect(() => {
@@ -79,6 +79,7 @@ function Movies() {
                 setPreloaderVisibility(false)
                 localStorage.setItem('value', name)
                 localStorage.setItem('checkBox', JSON.stringify(checkBox))
+
             })
     }
 
@@ -139,9 +140,13 @@ function Movies() {
                 setVisivleButtonPluse(false)
             }
             setCardList(newCardList)
+            console.log('Возврат на короткий метр')
+
         }
         if (checkBox) {
             setCardList(JSON.parse(localStorage.getItem('moviesCardList')))
+            console.log('Возврат на норм фильмы')
+
             setVisivleButtonPluse(true)
         }
     }

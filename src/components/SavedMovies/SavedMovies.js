@@ -18,7 +18,7 @@ function SavedMovies() {
         mainApi.getSavedMovies()
             .then((res) => {
                 setSavedMoviesList(res)
-                localStorage.setItem('savedMovies', JSON.stringify(res))
+                // localStorage.setItem('savedMovies', JSON.stringify(res))
             })
 
     }, [])

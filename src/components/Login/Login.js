@@ -14,15 +14,10 @@ function Login({ onUpdateRegistr, loginError }) {
     function handleSubmit(e) {
         e.preventDefault()
 
-        localStorage.setItem('movies', JSON.stringify([]))
-        localStorage.setItem('value', '')
-        localStorage.setItem('checkBox', false)
-
         onUpdateRegistr({
             email: emailRef.current.value,
             password: passwordRef.current.value
         })
-
     }
 
     return (
