@@ -14,7 +14,7 @@ function Profile({ props }) {
     const [emailValue, setEmailValue] = useState('')
     const fromValidation = useFormWithValidation()
     const navigate = useNavigate();
-    const [emailValid, setEmailValid] = useState(false)
+    const [emailValid, setEmailValid] = useState(true)
 
     useEffect(() => {
         mainApi.getProfileInfo()
