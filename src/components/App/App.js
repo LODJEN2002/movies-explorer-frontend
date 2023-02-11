@@ -42,8 +42,12 @@ function App() {
     mainApi.register(password, email, name)
       .then(() => {
         handleSubmitLogin({ email: email, password: password })
+        setLoginError(false)
       })
-      .catch(err => console.log(err))
+      .catch((err) => {
+        setLoginError(true)
+        console.log(err)
+      })
   }
 
   function handleSubmitLogin(inputs) {
@@ -66,7 +70,6 @@ function App() {
       })
       .catch((error) => {
         setLoginError(true)
-        console.log(loginError)
         if (error === 'Ошибка: 401') {
           console.log('Что-то пошло не так')
         }
@@ -122,6 +125,7 @@ function App() {
           <Route path='/signup'
             element={<Register
               onUpdateRegistr={handleSubmitRegister}
+              loginError={loginError}
             />}
           />
           <Route path='/signin' element={<Login

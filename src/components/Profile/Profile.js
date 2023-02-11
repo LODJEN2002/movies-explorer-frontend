@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import { useNavigate } from 'react-router-dom';
 import mainApi from '../../utils/MainApi';
-import { useFormWithValidation } from '../../utils/validation';
+import { useFormWithValidation, useInputWithValidation } from '../../utils/validation';
 import Header from '../Header/Header';
 import './Profile.css'
 
@@ -14,7 +14,7 @@ function Profile({ props }) {
     const [emailValue, setEmailValue] = useState('')
     const fromValidation = useFormWithValidation()
     const navigate = useNavigate();
-
+    const [emailValid, setEmailValid] = useState(false)
 
     useEffect(() => {
         mainApi.getProfileInfo()
@@ -31,11 +31,19 @@ function Profile({ props }) {
 
     function handleChangeEmail(e) {
         setEmailValue(e.target.value)
+
+        const mailValidation = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
+
+        if (mailValidation.test(e.target.value)) {
+            setEmailValid(true)
+        }
+
     }
 
     function handleSubmit(e) {
         e.preventDefault()
 
+        setEmailValid(false)
 
         setCurrentUser({
             name: nameValue,
@@ -82,6 +90,8 @@ function Profile({ props }) {
                         type='text'
                         onChange={handleChangeName}
                         value={nameValue}
+                        min='2'
+                        max='20'
                         name='name'
                         className='Profile__info-input' ></input>
                 </div>
@@ -101,11 +111,11 @@ function Profile({ props }) {
                     Что-то пошло не так...
                 </span>
                 <button
-                    className={fromValidation.isValid ? 'Profile__footer-edit' : 'Profile__footer-edit-disabled'}
+                    className={fromValidation.isValid && emailValid ? 'Profile__footer-edit' : 'Profile__footer-edit-disabled'}
                     disabled={
                         currentUser.name === nameValue && currentUser.email === emailValue
                             ? true : false ||
-                                fromValidation.isValid ? false : true
+                                fromValidation.isValid && emailValid ? false : true
                     }
                 >Редактировать </button>
             </form>

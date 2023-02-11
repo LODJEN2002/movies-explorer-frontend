@@ -2,30 +2,26 @@ import './Register.css';
 import logo from '../../images/logo.svg';
 import { Link } from 'react-router-dom';
 import { useRef } from 'react';
-import { useFormWithValidation, useInputWithValidation } from '../../utils/validation';
+import { useFormWithValidation, useInputWithValidation, useInputWithValidationName } from '../../utils/validation';
 
-
-function Register({ onUpdateRegistr }) {
-
+function Register({ onUpdateRegistr, loginError }) {
     const refName = useRef();
     const refEmail = useRef();
     const refPassword = useRef();
-
-
     const errorForm = useFormWithValidation()
-    const nameInput = useInputWithValidation()
+    const nameInput = useInputWithValidationName()
     const errorInput = useInputWithValidation()
 
     function handleSubmit(e) {
         e.preventDefault();
-        
+
         onUpdateRegistr({
-            name : refName.current.value,
-            email : refEmail.current.value,
-            password : refPassword.current.value,
+            name: refName.current.value,
+            email: refEmail.current.value,
+            password: refPassword.current.value,
         })
     }
-    
+
     return (
         <section className='Register'>
             <Link to='/'>
@@ -35,8 +31,8 @@ function Register({ onUpdateRegistr }) {
                 Добро пожаловать!
             </h2>
             <form className='Register__form'
-            onSubmit={handleSubmit}
-            onChange={errorForm.handleChange}
+                onSubmit={handleSubmit}
+                onChange={errorForm.handleChange}
             >
                 <p className='Register__form-text'>Имя</p>
                 <input
@@ -57,14 +53,14 @@ function Register({ onUpdateRegistr }) {
                     ref={refPassword}
                     name='password'
                     className='Register__form-input Register__form-password' type='password' required></input>
-                {/* <span className='Register__form-error Register__form-error-hidden'>Что-то пошло не так...</span> */}
+                <span className={loginError ? 'Register__form-error' : 'Register__form-error-hidden'}>Что-то пошло не так...</span>
                 <button className={errorForm.isValid ? 'Register__form-submit' : 'Register__form-submit-disabled'} type='submit' disabled={errorForm.isValid ? false : true}>Зарегистрироваться</button>
             </form>
             <p className='Register__question'>
                 Уже зарегистрированы?
                 <Link className='Register__link-login' to='/signin'> Войти</Link>
             </p>
-        </section>
+        </section >
     );
 };
 

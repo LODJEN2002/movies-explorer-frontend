@@ -57,7 +57,7 @@
 }
 
 .Register__form-error-hidden {
-    visibility: hidden;
+    display: none;
 }
 
 .Register__form-submit {

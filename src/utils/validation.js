@@ -1,7 +1,5 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import React from "react";
-
-
 
 export function useForm() {
     const [values, setValues] = useState({})
@@ -25,8 +23,10 @@ export function useFormWithValidation() {
         const target = event.target;
         const name = target.name;
         const value = target.value;
+
         setValues({ ...values, [name]: value });
         setErrors({ ...errors, [name]: target.validationMessage });
+
         setIsValid(target.closest('form').checkValidity());
     };
 
@@ -46,9 +46,22 @@ export function useInputWithValidation() {
     const [isValid, setIsValid] = React.useState(true);
 
     function handleChange(e) {
-        const target = e.target;
-            setIsValid(target.checkValidity())
+        const mailValidation = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
+
+        setIsValid(mailValidation.test(e.target.value))
     }
 
-    return { handleChange, isValid};
+    return { handleChange, isValid };
+};
+
+export function useInputWithValidationName() {
+    const [isValid, setIsValid] = React.useState(true);
+
+    function handleChange(e) {
+        const target = e.target;
+        
+        setIsValid(target.checkValidity())
+    }
+
+    return { handleChange, isValid };
 };
