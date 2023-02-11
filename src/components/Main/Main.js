@@ -7,9 +7,6 @@ import Portfolio from './Portfolio/Portfolio';
 import Footer from '../Footer/Footer';
 import PromoBaner from './PromoBaner/PromoBaner';
 import './Main.css';
-import { useEffect } from 'react';
-
-
 
 function Main({loggedIn}) {
     return (

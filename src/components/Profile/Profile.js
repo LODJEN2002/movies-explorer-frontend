@@ -1,35 +1,55 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+import { useNavigate } from 'react-router-dom';
 import mainApi from '../../utils/MainApi';
 import { useFormWithValidation } from '../../utils/validation';
 import Header from '../Header/Header';
 import './Profile.css'
 
 function Profile({ props }) {
-    const { onUpdateProfile, errorTextProfile, loggedIn, setLoggedIn } = props
+    const { onUpdateProfile, errorTextProfile, setLoggedIn, popupOpend, setPopupOpend } = props
     const { currentUser, setCurrentUser } = useContext(CurrentUserContext)
+    const [nameValue, setNameValue] = useState('')
+    const [emailValue, setEmailValue] = useState('')
     const fromValidation = useFormWithValidation()
-    const nameRef = useRef()
-    const emailRef = useRef()
+    const navigate = useNavigate();
+
 
     useEffect(() => {
         mainApi.getProfileInfo()
-            .then(res => setCurrentUser(res))
-    }, [currentUser.name, currentUser.email, setCurrentUser])
+            .then(res => {
+                setCurrentUser(res)
+                setNameValue(res.name)
+                setEmailValue(res.email)
+            })
+    }, [])
+
+    function handleChangeName(e) {
+        setNameValue(e.target.value)
+    }
+
+    function handleChangeEmail(e) {
+        setEmailValue(e.target.value)
+    }
 
     function handleSubmit(e) {
         e.preventDefault()
 
+
         setCurrentUser({
-            name: nameRef.current.value,
-            email: emailRef.current.value
+            name: nameValue,
+            email: emailValue
         })
 
         onUpdateProfile({
-            name: nameRef.current.value,
-            email: emailRef.current.value
+            name: nameValue,
+            email: emailValue
         })
+    }
+
+    function handleClickClosePopup() {
+        setPopupOpend(false)
     }
 
     function handleExit() {
@@ -38,7 +58,9 @@ function Profile({ props }) {
         localStorage.removeItem('value')
         localStorage.removeItem('checkBox')
         localStorage.removeItem('moviesCardList')
+        localStorage.removeItem('savedMovies')
         setLoggedIn(false)
+        navigate('/');
     }
 
     return (
@@ -57,9 +79,9 @@ function Profile({ props }) {
                         Имя
                     </p>
                     <input
-                        ref={nameRef}
                         type='text'
-                        placeholder={currentUser.name}
+                        onChange={handleChangeName}
+                        value={nameValue}
                         name='name'
                         className='Profile__info-input' ></input>
                 </div>
@@ -68,8 +90,8 @@ function Profile({ props }) {
                         E-mail
                     </p>
                     <input
-                        ref={emailRef}
-                        placeholder={currentUser.email}
+                        onChange={handleChangeEmail}
+                        value={emailValue}
                         name='email'
                         type='email'
                         className='Profile__info-input' ></input>
@@ -80,14 +102,26 @@ function Profile({ props }) {
                 </span>
                 <button
                     className={fromValidation.isValid ? 'Profile__footer-edit' : 'Profile__footer-edit-disabled'}
-                    disabled={fromValidation.isValid ? false : true}
+                    disabled={
+                        currentUser.name === nameValue && currentUser.email === emailValue
+                            ? true : false ||
+                                fromValidation.isValid ? false : true
+                    }
                 >Редактировать </button>
             </form>
             <div className='Profile__footer'>
-                <Link to='/signin' className='Profile__footer-exit'
+                <Link to='/' className='Profile__footer-exit'
                     onClick={handleExit}
                 >Выйти из аккаунта </Link>
             </div>
+            {popupOpend && <div className='Profile__popup'>
+                <button
+                    onClick={handleClickClosePopup}
+                    className='Profile__popup-button'> </button>
+                <p className='Profile__popup-text'>
+                    Всё получилось!
+                </p>
+            </div>}
         </section>
     );
 };

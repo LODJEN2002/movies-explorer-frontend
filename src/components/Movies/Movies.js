@@ -13,7 +13,7 @@ function Movies() {
     const [preloaderVisibility, setPreloaderVisibility] = useState(false)
     const [badRequest, setBadRequest] = useState(false)
     const [badRequestText, setBadRequestText] = useState('')
-    const [visivleButtonPluse, setVisivleButtonPluse] = useState(true)
+    const [visivleButtonPluse, setVisivleButtonPluse] = useState(false)
     const [checkBox, setCheckBox] = useState(JSON.parse(localStorage.getItem('checkBox')))
     const [valueSearch, setValueSearch] = useState(localStorage.getItem('value'))
 
@@ -22,7 +22,7 @@ function Movies() {
     }, [cardList])
 
     useEffect(() => {
-        if (cardList.length === resultArr.length || cardList.length === 12) {
+        if (cardList.length === resultArr.length || cardList.length === 16) {
             setVisivleButtonPluse(false)
         }
     }, [cardList, resultArr])
@@ -49,25 +49,24 @@ function Movies() {
                         }
                     }
                 })
-                let newArr = resultArr.slice(0, 12)
                 if (resultArr.length === 0) {
                     setBadRequest(true)
                     setBadRequestText('Ничего не найдено')
                 }
                 if (window.innerWidth >= 1281) {
-                    setResultArr(newArr)
+                    setResultArr(resultArr)
                     setCardList(resultArr.slice(0, 4), ...cardList)
                 }
                 if (window.innerWidth <= 1281) {
-                    setResultArr(newArr)
+                    setResultArr(resultArr)
                     setCardList(resultArr.slice(0, 3), ...cardList)
                 }
-                if (window.innerWidth <= 990) {
-                    setResultArr(newArr)
+                if (window.innerWidth <= 1030) {
+                    setResultArr(resultArr)
                     setCardList(resultArr.slice(0, 2), ...cardList)
                 }
                 if (window.innerWidth <= 760) {
-                    setResultArr(newArr)
+                    setResultArr(resultArr)
                     setCardList(resultArr.slice(0, 5), ...cardList)
                 }
             })
@@ -79,7 +78,6 @@ function Movies() {
                 setPreloaderVisibility(false)
                 localStorage.setItem('value', name)
                 localStorage.setItem('checkBox', JSON.stringify(checkBox))
-
             })
     }
 
@@ -90,6 +88,9 @@ function Movies() {
         if (cardList.length === 8 && window.innerWidth >= 1281 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 12), ...cardList)
         }
+        if (cardList.length === 12 && window.innerWidth >= 1281 && resultArr.length !== 0) {
+            setCardList(resultArr.slice(0, 16), ...cardList)
+        }
         if (cardList.length === 3 && window.innerWidth <= 1281 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 6), ...cardList)
         }
@@ -99,32 +100,50 @@ function Movies() {
         if (cardList.length === 9 && window.innerWidth <= 1281 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 12), ...cardList)
         }
-        if (cardList.length === 2 && window.innerWidth <= 990 && resultArr.length !== 0) {
+        if (cardList.length === 12 && window.innerWidth <= 1281 && resultArr.length !== 0) {
+            setCardList(resultArr.slice(0, 15), ...cardList)
+        }
+        if (cardList.length === 15 && window.innerWidth <= 1281 && resultArr.length !== 0) {
+            setCardList(resultArr.slice(0, 16), ...cardList)
+        }
+        if (cardList.length === 2 && window.innerWidth <= 1030 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 4), ...cardList)
         }
-        if (cardList.length === 4 && window.innerWidth <= 990 && resultArr.length !== 0) {
+        if (cardList.length === 4 && window.innerWidth <= 1030 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 6), ...cardList)
         }
-        if (cardList.length === 6 && window.innerWidth <= 990 && resultArr.length !== 0) {
+        if (cardList.length === 6 && window.innerWidth <= 1030 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 8), ...cardList)
         }
-        if (cardList.length === 8 && window.innerWidth <= 990 && resultArr.length !== 0) {
+        if (cardList.length === 8 && window.innerWidth <= 1030 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 10), ...cardList)
         }
-        if (cardList.length === 10 && window.innerWidth <= 990 && resultArr.length !== 0) {
+        if (cardList.length === 10 && window.innerWidth <= 1030 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 12), ...cardList)
         }
-        if (cardList.length === 5 && window.innerWidth <= 990 && resultArr.length !== 0) {
+        if (cardList.length === 12 && window.innerWidth <= 1030 && resultArr.length !== 0) {
+            setCardList(resultArr.slice(0, 14), ...cardList)
+        }
+        if (cardList.length === 14 && window.innerWidth <= 1030 && resultArr.length !== 0) {
+            setCardList(resultArr.slice(0, 16), ...cardList)
+        }
+        if (cardList.length === 5 && window.innerWidth <= 760 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 7), ...cardList)
         }
-        if (cardList.length === 7 && window.innerWidth <= 990 && resultArr.length !== 0) {
+        if (cardList.length === 7 && window.innerWidth <= 760 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 9), ...cardList)
         }
-        if (cardList.length === 9 && window.innerWidth <= 990 && resultArr.length !== 0) {
+        if (cardList.length === 9 && window.innerWidth <= 760 && resultArr.length !== 0) {
             setCardList(resultArr.slice(0, 11), ...cardList)
         }
-        if (cardList.length === 11 && window.innerWidth <= 990 && resultArr.length !== 0) {
-            setCardList(resultArr.slice(0, 12), ...cardList)
+        if (cardList.length === 11 && window.innerWidth <= 760 && resultArr.length !== 0) {
+            setCardList(resultArr.slice(0, 13), ...cardList)
+        }
+        if (cardList.length === 13 && window.innerWidth <= 760 && resultArr.length !== 0) {
+            setCardList(resultArr.slice(0, 15), ...cardList)
+        }
+        if (cardList.length === 15 && window.innerWidth <= 760 && resultArr.length !== 0) {
+            setCardList(resultArr.slice(0, 16), ...cardList)
         }
     }
 
@@ -140,13 +159,9 @@ function Movies() {
                 setVisivleButtonPluse(false)
             }
             setCardList(newCardList)
-            console.log('Возврат на короткий метр')
-
         }
         if (checkBox) {
             setCardList(JSON.parse(localStorage.getItem('moviesCardList')))
-            console.log('Возврат на норм фильмы')
-
             setVisivleButtonPluse(true)
         }
     }

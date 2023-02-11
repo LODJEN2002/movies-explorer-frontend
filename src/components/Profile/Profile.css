@@ -130,6 +130,35 @@
     display: none;
 }
 
+.Profile__popup  {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 30%;
+    left: 40%;
+    width: 250px;
+    height: 250px;
+    background-color: #3DDC84;;
+}
+
+.Profile__popup-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 15px;
+    height: 15px;
+    background-image: url(../../images/1487086345-cross_81577.svg);
+    background-size: 15px 15px;
+    border: none;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.Profile__popup-text {
+    
+}
+
 
 @media screen and (max-width:768px) {
     .Profile {

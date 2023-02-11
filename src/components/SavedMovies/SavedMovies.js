@@ -13,14 +13,12 @@ function SavedMovies() {
     const [valueSearch, setValueSearch] = useState('')
     const matched = (str, match) => str.toLowerCase().includes(match.toLowerCase());
 
-
     useEffect(() => {
         mainApi.getSavedMovies()
             .then((res) => {
                 setSavedMoviesList(res)
-                // localStorage.setItem('savedMovies', JSON.stringify(res))
+                localStorage.setItem('savedMovies', JSON.stringify(res))
             })
-
     }, [])
 
     function handleSearchClick(valueSearch) {
@@ -32,9 +30,7 @@ function SavedMovies() {
             }
         })
         setSavedMoviesList(newSavedMoviesList)
-
     }
-
 
     function handleCheckBoxClick() {
         if (!checkBox) {
@@ -48,7 +44,6 @@ function SavedMovies() {
         if (checkBox) {
             setSavedMoviesList(JSON.parse(localStorage.getItem('savedMovies')))
         }
-
     }
 
     function handleDeleteClick(card) {

@@ -16,6 +16,7 @@ function App() {
   const navigate = useNavigate();
   const [loginError, setLoginError] = useState(false);
   const [errorTextProfile, SetErrorTextProfile] = useState(false);
+  const [popupOpend, setPopupOpend] = useState(false);
   const [currentUser, setCurrentUser] = useState([])
   const [loggedIn, setLoggedIn] = useState(localStorage.getItem('token') ? true : false)
 
@@ -40,8 +41,6 @@ function App() {
     const { password, email, name } = inputs
     mainApi.register(password, email, name)
       .then(() => {
-        // let arr = [email, password]
-        console.log({ email: email, password: password })
         handleSubmitLogin({ email: email, password: password })
       })
       .catch(err => console.log(err))
@@ -62,6 +61,7 @@ function App() {
           localStorage.setItem('value', '')
           localStorage.setItem('checkBox', false)
           localStorage.setItem('moviesCardList', JSON.stringify([]))
+          localStorage.setItem('savedMovies', JSON.stringify([]))
         }
       })
       .catch((error) => {
@@ -77,7 +77,10 @@ function App() {
     const { name, email } = inputs;
 
     mainApi.profile(email, name)
-      .then(() => SetErrorTextProfile(false))
+      .then(() => {
+        SetErrorTextProfile(false)
+        setPopupOpend(true)
+      })
       .catch(() => SetErrorTextProfile(true))
   }
 
@@ -107,6 +110,8 @@ function App() {
           <Route path='/profile'
             element={<ProtectedRoute
               component={Profile}
+              popupOpend={popupOpend}
+              setPopupOpend={setPopupOpend}
               onUpdateProfile={handleSubmitProfile}
               errorTextProfile={errorTextProfile}
               loggedIn={loggedIn}
