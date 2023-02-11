@@ -1,5 +1,10 @@
+.Promo {
+    margin: 0 -70px;
+}
+
 .Promo__header {
     display: flex;
+    /* width: 10%; */
     background-color: #073042;
     justify-content: space-between;
 }
@@ -52,34 +57,12 @@
     text-decoration: none;
 }
 
-
-
 .Promo__signin:hover {
     opacity: .7;
 }
 
 .Promo__signin-button {
     background-color: #3DDC84;
-}
-
-.Promo__baner {
-    height: 524px;
-    background-color: #073042;
-    background-image: url('../../../images/pic__COLOR_landing-logo.svg');
-    background-size: 248px;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.Promo__baner-title {
-    color: white;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 50px;
-    line-height: 58px;
-    text-align: center;
-    margin: 0 auto;
-    padding-top: 184px;
 }
 
 @media screen and (max-width:768px) {
@@ -121,14 +104,5 @@
         line-height: 16px;
     }
 
-    .Promo__baner {
-        height: 570px;
-        background-position-y: 142px;
-    }
 
-    .Promo__baner-title {
-        padding-top: 207px;
-        font-size: 31px;
-        line-height: 39px;
-    }
 }

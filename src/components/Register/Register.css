@@ -56,6 +56,10 @@
     line-height: 12px;
 }
 
+.Register__form-error-hidden {
+    display: none;
+}
+
 .Register__form-submit {
     margin: 69px 0 16px 0;
     width: 396px;
@@ -69,6 +73,21 @@
     font-weight: 500;
     font-size: 14px;
     cursor: pointer;
+}
+
+.Register__form-submit-disabled {
+    margin: 69px 0 16px 0;
+    width: 396px;
+    height: 45px;
+    color: black;
+    background-color: white;
+    border-radius: 3px;
+    border: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    cursor:no-drop
 }
 
 .Register__form-submit:hover {

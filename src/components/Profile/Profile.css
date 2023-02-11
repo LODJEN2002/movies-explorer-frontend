@@ -27,10 +27,25 @@
     border-bottom: 1px solid #424242;
 }
 
+.Profile__info-input {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    padding: 0;
+    height: 46px;
+    background-color: #202020;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Inter';
+    /* line-height: 16px; */
+    color: white;
+}
+
 .Profile__info-email {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 220px;
+    margin-bottom: 200px;
 }
 
 .Profile__info-text {
@@ -55,7 +70,29 @@
     margin-bottom: 16px;
     cursor: pointer;
     text-decoration: none;
-    color: white
+    color: white;
+    border: none;
+    background-color: #202020;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Profile__footer-edit-disabled {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    color: gray;
+    border: none;
+    background-color: #202020;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: not-allowed;
 }
 
 .Profile__footer-edit:hover {
@@ -75,6 +112,53 @@
 .Profile__footer-exit:hover {
     opacity: .7;
 }
+
+.Profile__info-error {
+    display: block;
+    color: #EE3465;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.Profile__info-error-hidden {
+    display: none;
+}
+
+.Profile__popup  {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 30%;
+    left: 40%;
+    width: 250px;
+    height: 250px;
+    background-color: #3DDC84;;
+}
+
+.Profile__popup-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 15px;
+    height: 15px;
+    background-image: url(../../images/1487086345-cross_81577.svg);
+    background-size: 15px 15px;
+    border: none;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.Profile__popup-text {
+    
+}
+
 
 @media screen and (max-width:768px) {
     .Profile {

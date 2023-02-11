@@ -1,9 +1,13 @@
 import './ButtonPluse.css';
 
-function ButtonPluse() {
+function ButtonPluse(props) {
+    const { visivleButtonPluse } = props
+
     return (
-        <section className='ButtonPluse'>
-            <button className='ButtonPluse__head'>Ещё</button>
+        visivleButtonPluse && <section className='ButtonPluse'>
+            <button
+                onClick={props.handleMoreMovies}
+                className='ButtonPluse__head'>Ещё</button>
         </section>
     );
 };

@@ -1,12 +1,11 @@
-import MainTitle from '../MainTitle/MainTitle';
 import './Techs.css';
 
 function Techs() {
     return (
         <section className='Techs' id="Techs">
-            <MainTitle
-                title='Технологии'
-            />
+            <h3 className='MainTitleTex'>
+                Технологии
+            </h3>
             <div className='Techs__main'>
                 <h2 className='Techs__main-title'>7 технологий </h2>
                 <p className='Techs__main-subtitle'>На курсе веб-разработки мы освоили технологии,

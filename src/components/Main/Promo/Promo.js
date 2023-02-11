@@ -1,9 +1,16 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../images/logo.svg';
+import Header from '../../Header/Header';
 import './Promo.css';
 
-function Promo() {
-    return (
+function Promo({loggedIn}) {
+    useContext(() => {
+
+    },[loggedIn])
+
+    return loggedIn ? <Header 
+    /> :   
         <header className='Promo'>
             <div className='Promo__header'>
                 <Link to='/main'>
@@ -14,12 +21,7 @@ function Promo() {
                     <Link to='signin' className='Promo__signin'>Войти</Link>
                 </div>
             </div>
-            <div className='Promo__baner'>
-                <h1 className='Promo__baner-title'>Учебный проект студента факультета Веб-разработки.</h1>
-            </div>
         </header>
-
-    );
 }
 
 export default Promo

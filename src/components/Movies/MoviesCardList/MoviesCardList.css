@@ -5,6 +5,9 @@
     margin-right: auto;
     max-width: 1140px;
 }
+.MoviesCardList__bad-request-text {
+    margin: 0 auto 0 auto;
+}
 
 @media screen and (max-width: 768px) {
     .MoviesCardList {

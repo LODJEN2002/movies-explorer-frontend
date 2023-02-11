@@ -1,0 +1,34 @@
+.Promo__baner {
+    margin: 0 -70px;
+    height: 524px;
+    background-color: #073042;
+    background-image: url('../../../images/pic__COLOR_landing-logo.svg');
+    background-size: 248px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Promo__baner-title {
+    color: white;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 58px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 184px;
+}
+
+@media screen and (max-width: 424px) {
+    .Promo__baner {
+        height: 570px;
+        background-position-y: 142px;
+    }
+
+    .Promo__baner-title {
+        padding-top: 207px;
+        font-size: 31px;
+        line-height: 39px;
+    }
+
+}
