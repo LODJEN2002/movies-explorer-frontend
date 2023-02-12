@@ -43,7 +43,7 @@ function Profile({ props }) {
     function handleSubmit(e) {
         e.preventDefault()
 
-        setEmailValid(false)
+        // setEmailValid(false)
 
         setCurrentUser({
             name: nameValue,
