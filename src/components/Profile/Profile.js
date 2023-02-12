@@ -37,7 +37,6 @@ function Profile({ props }) {
         if (mailValidation.test(e.target.value)) {
             setEmailValid(true)
         }
-
     }
 
     function handleSubmit(e) {

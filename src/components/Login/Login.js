@@ -1,15 +1,19 @@
 import './Login.css';
 import logo from '../../images/logo.svg';
 import { Link } from 'react-router-dom';
-import { useRef } from 'react';
+import { useRef, useEffect} from 'react';
 import { useFormWithValidation, useInputWithValidation } from '../../utils/validation';
 
 
-function Login({ onUpdateRegistr, loginError }) {
+function Login({ onUpdateRegistr, loginError,setLoginError }) {
     const formValidation = useFormWithValidation()
     const emailValidation = useInputWithValidation()
     const emailRef = useRef()
     const passwordRef = useRef()
+
+    useEffect(() => {
+        setLoginError(false)
+    },[])
 
     function handleSubmit(e) {
         e.preventDefault()

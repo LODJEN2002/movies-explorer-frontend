@@ -2,7 +2,6 @@ import './SaveMoviesCard.css';
 
 function SaveMoviesCard(props) {
     function onCardDelete() {
-        console.log(props)
         props.onCardDelete(props)
     }
 

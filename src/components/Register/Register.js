@@ -1,16 +1,20 @@
 import './Register.css';
 import logo from '../../images/logo.svg';
 import { Link } from 'react-router-dom';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useFormWithValidation, useInputWithValidation, useInputWithValidationName } from '../../utils/validation';
 
-function Register({ onUpdateRegistr, loginError }) {
+function Register({ onUpdateRegistr, loginError, setLoginError }) {
     const refName = useRef();
     const refEmail = useRef();
     const refPassword = useRef();
     const errorForm = useFormWithValidation()
     const nameInput = useInputWithValidationName()
     const errorInput = useInputWithValidation()
+
+    useEffect(() => {
+        setLoginError(false)
+    },[])
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -58,7 +62,9 @@ function Register({ onUpdateRegistr, loginError }) {
             </form>
             <p className='Register__question'>
                 Уже зарегистрированы?
-                <Link className='Register__link-login' to='/signin'> Войти</Link>
+                <Link 
+                className='Register__link-login'
+                to='/signin'> Войти</Link>
             </p>
         </section >
     );

@@ -126,13 +126,16 @@ function App() {
             element={<Register
               onUpdateRegistr={handleSubmitRegister}
               loginError={loginError}
+              setLoginError={setLoginError}
             />}
           />
-          <Route path='/signin' element={<Login
-            loggedIn={loggedIn}
-            onUpdateRegistr={handleSubmitLogin}
-            loginError={loginError}
-          />} />
+          <Route path='/signin'
+            element={<Login
+              loggedIn={loggedIn}
+              setLoginError={setLoginError}
+              onUpdateRegistr={handleSubmitLogin}
+              loginError={loginError}
+            />} />
           <Route path='/404'
             element={<ErrorPage />} />
           <Route
