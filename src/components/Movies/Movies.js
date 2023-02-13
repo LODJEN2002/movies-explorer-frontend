@@ -86,7 +86,7 @@ function Movies() {
         if (!checkBox) {
             localStorage.setItem('moviesCardList', JSON.stringify(cardList))
             localStorage.setItem('checkBox', JSON.stringify(!checkBox))
-            console.log('вкл чекбокс')
+            setVisivleButtonPluse(false)
             let newCardList = cardList.filter((card) => {
                 if (card.duration <= 40) {
                     return card
@@ -100,7 +100,6 @@ function Movies() {
         if (checkBox) {
             setCardList(JSON.parse(localStorage.getItem('moviesCardList')))
             localStorage.setItem('checkBox', JSON.stringify(!checkBox))
-            console.log('выкл чекбокс')
             setVisivleButtonPluse(true)
         }
     }
