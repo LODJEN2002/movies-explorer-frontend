@@ -66,6 +66,7 @@ function Profile({ props }) {
         localStorage.removeItem('checkBox')
         localStorage.removeItem('moviesCardList')
         localStorage.removeItem('savedMovies')
+
         setLoggedIn(false)
         navigate('/');
     }
